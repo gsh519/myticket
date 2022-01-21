@@ -1,0 +1,273 @@
+@charset 'utf-8';
+
+$main-color: #FDFCFB;
+$sub-color: #F6E5D9;
+$hero-color: #F9F4F0;
+$font-color: #5E2D01;
+$accent-color: #E1134B;
+
+body {
+  background-color: $sub-color;
+}
+
+::placeholder {
+  color: $font-color;
+}
+
+.wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.logo {
+  a {
+    font-size: 20px;
+    color: $accent-color;
+    font-weight: bold;
+    padding: 16px 0;
+    margin-bottom: 20px;
+    font-family: 'follana', sans-serif;
+    display: block;
+    letter-spacing: 1.5px;
+  }
+  &--get {
+    margin-bottom: 50px;
+  }
+}
+
+.title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  color: $accent-color;
+  margin-bottom: 30px;
+}
+
+.hero {
+  background: url("../images/hero_heart.gif");
+  background-size: contain;
+  height: 100vh;
+  &__ttl {
+    background-image: url("..//images/heart_ttl.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 350px;
+  }
+
+  &__link {
+    .item {
+      margin-bottom: 40px;
+      text-align: center;
+      &:nth-of-type(2) {
+        margin-bottom: 0;
+      }
+      a {
+        background: $accent-color;
+        color: #fff;
+        box-shadow: 0 0 0 1px $accent-color;
+        padding: 20px;
+        font-weight: bold;
+        font-size: 20px;
+        display: block;
+        border-radius: 15px;
+      }
+    }
+  }
+}
+
+.ticketid-form {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 1px 1px 1px 1px #ccc;
+  padding: 16px;
+  h2 {
+    margin-bottom: 30px;
+    color: $font-color;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  &__area {
+    margin-bottom: 20px;
+    &--right {
+      text-align: right;
+    }
+    label {
+      display: block;
+      font-size: 16px;
+      color: $font-color;
+      margin-bottom: 20px;
+    }
+    .ticket_id {
+      display: block;
+      width: 100%;
+      height: 50px;
+      background-color: #DDD2C9;
+      border-radius: 15px;
+      outline: #DDD2C9;
+      padding: 16px;
+      color: $font-color;
+    }
+
+    .submit {
+      background-color: #DDD2C9;
+      padding: 12px 24px;
+      border-radius: 15px;
+      font-weight: bold;
+      color: $font-color;
+    }
+  }
+}
+
+.error {
+  text-align: center;
+  font-size: 16px;
+  color: $accent-color;
+}
+
+.question-ttl {
+  text-align: center;
+  font-size: 18px;
+  color: $accent-color;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.question-start {
+  h1 {
+    text-align: center;
+    font-size: 24px;
+    color: $font-color;
+    margin-bottom: 50px;
+  }
+  #start-box {
+    display: block;
+    background-color: $accent-color;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 24px;
+    text-align: center;
+    border-radius: 15px;
+  }
+}
+
+.questions {
+  margin-bottom: 30px;
+  &__item {
+    background-color: $main-color;
+    border: 1px solid $font-color;
+    padding: 16px;
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    .question-number {
+      color: $font-color;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 20px;
+      span {
+        font-size: 34px;
+      }
+    }
+
+    .question-subject {
+      font-size: 18px;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .question-comm {
+      font-size: 12px;
+      color: #7b7676;
+      margin-bottom: 10px;
+    }
+
+    .select-area {
+      border: 2px solid #bbb;
+      padding: 12px 8px;
+      min-height: 32px;
+      box-sizing: border-box;
+      color: #4D4B49;
+      border-radius: 15px;
+      margin-bottom: 10px;
+      label {
+        display: flex;
+        align-items: center;
+        p {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+
+  .check {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background-color: $accent-color;
+    color: #fff;
+    text-align: center;
+  }
+}
+
+.answer {
+  background-color: $main-color;
+  border: 1px solid $font-color;
+  padding: 16px;
+  margin-bottom: 40px;
+  text-align: center;
+  color: $font-color;
+  h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    span {
+      font-size: 40px;
+      color: $accent-color;
+      font-weight: bold;
+    }
+  }
+
+  &__list {
+    text-align: center;
+    margin-bottom: 20px;
+    li {
+      color: blue;
+    }
+  }
+
+  .ticket-get {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background-color: $accent-color;
+    color: #fff;
+    text-align: center;
+    border-radius: 30px;
+  }
+
+  .fa-gift {
+    margin-right: 10px;
+  }
+}
+
+.ticket-img {
+  text-align: center;
+  margin-bottom: 30px;
+  img {
+    width: 100%;
+  }
+}
+
+.info {
+  text-align: center;
+  color: $font-color;
+  font-size: 18px;
+  font-weight: bold;
+}
