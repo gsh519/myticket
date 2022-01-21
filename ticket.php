@@ -13,13 +13,14 @@
 </head>
 
 <body>
-  <div class="wrapper">
+  <div class="wrapper ticket-frame">
     <div class="logo logo--get"><a href="./">myticket</a></div>
-    <h1 class="title">ticket for you</h1>
+    <h1 class="title"><i class="fas fa-gift"></i>ticket for you</h1>
     <div class="ticket-img">
       <img src="./images/gift_img.png" alt="チケット画像">
     </div>
-    <p class="info">当日はこのチケットを見せてね！！</p>
+    <p class="info">この画像を保存して<br>当日はこのチケットを見せてね！！</p>
+    <a href="#" class="ticket-store">画像保存</a>
   </div>
 </body>
 

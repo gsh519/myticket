@@ -16,7 +16,7 @@
   <div class="wrapper">
     <div class="logo logo--get"><a href="./">myticket</a></div>
     <div class="question-start">
-      <h1>ゆうとがあなたに向けて<br>作ったチケットです!</h1>
+      <h1>ゆうとがあなたに向けて<br>作ったクイズです!</h1>
     </div>
 
     <p class="question-ttl">クイズを解いてチケットをもらう</p>
@@ -129,7 +129,7 @@
         <li>1問目：◯</li>
         <li>1問目：◯</li>
         <li>1問目：◯</li>
-        <li>1問目：× </li>
+        <li>1問目：◯</li>
         <li>1問目：◯</li>
         <li>1問目：◯</li>
         <li>1問目：◯</li>

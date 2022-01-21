@@ -9,8 +9,44 @@ $submit = $_GET['submit'];
 if (!empty($submit)) {
   if (empty($ticket_id)) {
     $errors[] = 'チケットIDを入力してください';
-  } else {
+  }
+
+  // データーベース接続関数
+  function dbConnect($db_name, $db_host, $db_user, $db_pass)
+  {
+    // データーベースに接続
+    try {
+      $option = [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::MYSQL_ATTR_MULTI_STATEMENTS => false,
+      ];
+      $pdo = new PDO("mysql:charset=UTF8;dbname=$db_name;host=$db_host", $db_user, $db_pass, $option);
+      return $pdo;
+    } catch (PDOException $e) {
+      $errors[] = $e->getMessage();
+    }
+  }
+
+  $pdo = dbConnect("myticket", "localhost", "root", "root");
+
+  //sql文作成
+  $sql = "SELECT * FROM ticket WHERE id = :ticket_id";
+
+  $stmt = $pdo->prepare($sql);
+
+  //値のセット
+  $stmt->bindParam(':ticket_id', $ticket_id, PDO::PARAM_STR);
+
+  //実行
+  $stmt->execute();
+
+  //データの取得
+  $ticket_data = $stmt->fetch();
+
+  if (!empty($ticket_data)) {
     header("Location: ./question.php?ticket_id=$ticket_id");
+  } else {
+    $errors[] = 'チケットIDが間違えています';
   }
 }
 
