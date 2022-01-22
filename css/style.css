@@ -247,6 +247,10 @@ body {
   color: blue;
 }
 
+.answer__comm {
+  margin-bottom: 20px;
+}
+
 .answer .ticket-get {
   display: block;
   width: 100%;
