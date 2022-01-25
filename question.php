@@ -19,7 +19,7 @@
       <h1>ゆうとがあなたに向けて<br>作ったクイズです!</h1>
     </div>
 
-    <p class="question-ttl">クイズを解いてチケットをもらう</p>
+    <p class="question-ttl">クイズを解いてチケットをもらおう!</p>
     <div class="questions">
       <ul>
 

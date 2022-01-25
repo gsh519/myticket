@@ -1,9 +1,10 @@
+@charset "UTF-8";
 body {
   background-color: #F6E5D9;
 }
 
 ::placeholder {
-  color: #5E2D01;
+  color: #9c9c9c;
 }
 
 .wrapper {
@@ -280,6 +281,33 @@ body {
   width: 100%;
 }
 
+.fadeIn {
+  animation-name: fadeInAnime;
+  /*1で解説*/
+  animation-fill-mode: backwards;
+  /*2で解説*/
+  animation-duration: 3s;
+  /*3で解説*/
+  animation-iteration-count: 1;
+  /*4で解説*/
+  animation-timing-function: ease;
+  /*5で解説*/
+  animation-delay: 0.5s;
+  /*6で解説*/
+  animation-direction: normal;
+  /*7で解説*/
+}
+
+/*1で解説*/
+@keyframes fadeInAnime {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .info {
   text-align: center;
   color: #5E2D01;
@@ -288,7 +316,7 @@ body {
   margin-bottom: 30px;
 }
 
-.ticket-store {
+.ticket-link {
   color: #fff;
   background-color: #E1134B;
   display: block;
@@ -299,4 +327,8 @@ body {
   font-size: 16px;
   text-align: center;
   margin: 0 auto;
+}
+
+.ticket-link--store {
+  margin-bottom: 20px;
 }

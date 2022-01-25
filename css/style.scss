@@ -11,7 +11,7 @@ body {
 }
 
 ::placeholder {
-  color: $font-color;
+  color: rgb(156, 156, 156);
 }
 
 .wrapper {
@@ -275,6 +275,27 @@ body {
   }
 }
 
+.fadeIn {
+animation-name: fadeInAnime;/*1で解説*/
+animation-fill-mode:backwards;/*2で解説*/
+animation-duration:3s;/*3で解説*/
+animation-iteration-count:1;/*4で解説*/
+animation-timing-function:ease;/*5で解説*/
+animation-delay: 0.5s;/*6で解説*/
+animation-direction:normal;/*7で解説*/
+}
+
+/*1で解説*/
+@keyframes fadeInAnime{
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .info {
   text-align: center;
   color: $font-color;
@@ -283,7 +304,7 @@ body {
   margin-bottom: 30px;
 }
 
-.ticket-store {
+.ticket-link {
   color: #fff;
   background-color: $accent-color;
   display: block;
@@ -294,4 +315,7 @@ body {
   font-size: 16px;
   text-align: center;
   margin: 0 auto;
+  &--store {
+    margin-bottom: 20px;
+  }
 }
