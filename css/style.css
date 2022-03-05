@@ -10,7 +10,7 @@ body {
 .wrapper {
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 16px;
 }
 
 .logo a {
@@ -210,7 +210,8 @@ body {
   margin-left: 10px;
 }
 
-.questions .check {
+.check {
+  cursor: pointer;
   display: block;
   width: 100%;
   padding: 16px;
@@ -220,6 +221,7 @@ body {
 }
 
 .answer {
+  display: none;
   background-color: #FDFCFB;
   border: 1px solid #5E2D01;
   padding: 16px;
@@ -331,4 +333,8 @@ body {
 
 .ticket-link--store {
   margin-bottom: 20px;
+}
+
+.active {
+  display: block;
 }

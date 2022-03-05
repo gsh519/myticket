@@ -17,7 +17,7 @@ body {
 .wrapper {
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 16px;
 }
 
 .logo {
@@ -207,17 +207,20 @@ body {
     }
   }
 
-  .check {
-    display: block;
-    width: 100%;
-    padding: 16px;
-    background-color: $accent-color;
-    color: #fff;
-    text-align: center;
-  }
+}
+
+.check {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  padding: 16px;
+  background-color: $accent-color;
+  color: #fff;
+  text-align: center;
 }
 
 .answer {
+  display: none;
   background-color: $main-color;
   border: 1px solid $font-color;
   padding: 16px;
@@ -318,4 +321,8 @@ animation-direction:normal;/*7で解説*/
   &--store {
     margin-bottom: 20px;
   }
+}
+
+.active {
+  display: block;
 }
