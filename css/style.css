@@ -221,11 +221,10 @@ body {
 }
 
 .answer {
-  display: none;
   background-color: #FDFCFB;
   border: 1px solid #5E2D01;
   padding: 16px;
-  margin-bottom: 40px;
+  margin: 40px 0;
   text-align: center;
   color: #5E2D01;
 }
@@ -337,4 +336,11 @@ body {
 
 .active {
   display: block;
+}
+
+.answer-tag {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  color: #E1134B;
 }

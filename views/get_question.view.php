@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="./css/style.min.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-  <script src="./js/script.js" defer></script>
 </head>
 
 <body>
@@ -32,9 +31,11 @@
     <form action="" method="POST">
       <div class="questions">
 
-        <?php if (isset($questions)) : ?>
+        <?php if (isset($question->questions)) : ?>
           <ul>
-            <?php foreach ($questions as $index => $question) : ?>
+            <?php foreach ($question->questions as $index => $question) : ?>
+
+              <!-- これが一つの問題 -->
               <li class="questions__item">
                 <p class="question-number"><span><?php echo $index + 1; ?></span>問目</p>
                 <h2 class="question-subject"><?php echo $question['subject']; ?></h2>
@@ -42,49 +43,57 @@
 
                 <div class="select-area">
                   <label for="answer_1<?php echo $index; ?>">
-                    <input required type="radio" class="select-box" name="answer<?php echo $index; ?>" value="<?php echo $question['answer_list1']; ?>" id="answer_1<?php echo $index; ?>">
+                    <input required type="radio" class="select-box" name="answer<?php echo $index; ?>" value="<?php echo $question['answer_list1']; ?>" id="answer_1<?php echo $index; ?>" <?php if ($user_answers && $question['answer_list1'] === $user_answers[0]['answer' . $index]) {
+                                                                                                                                                                                              echo 'checked';
+                                                                                                                                                                                            } ?>>
                     <p><?php echo $question['answer_list1']; ?></p>
                   </label>
                 </div>
 
                 <div class="select-area">
                   <label for="answer_2<?php echo $index; ?>">
-                    <input required type="radio" class="select-box" name="answer<?php echo $index; ?>" value="<?php echo $question['answer_list2']; ?>" id="answer_2<?php echo $index; ?>">
+                    <input required type="radio" class="select-box" name="answer<?php echo $index; ?>" value="<?php echo $question['answer_list2']; ?>" id="answer_2<?php echo $index; ?>" <?php if ($user_answers && $question['answer_list2'] === $user_answers[0]['answer' . $index]) {
+                                                                                                                                                                                              echo 'checked';
+                                                                                                                                                                                            } ?>>
                     <p><?php echo $question['answer_list2']; ?></p>
                   </label>
                 </div>
 
                 <div class="select-area">
                   <label for="answer_3<?php echo $index; ?>">
-                    <input required type="radio" class="select-box" name="answer<?php echo $index; ?>" value="<?php echo $question['answer_list3']; ?>" id="answer_3<?php echo $index; ?>">
+                    <input required type="radio" class="select-box" name="answer<?php echo $index; ?>" value="<?php echo $question['answer_list3']; ?>" id="answer_3<?php echo $index; ?>" <?php if ($user_answers && $question['answer_list2'] === $user_answers[0]['answer' . $index]) {
+                                                                                                                                                                                              echo 'checked';
+                                                                                                                                                                                            } ?>>
                     <p><?php echo $question['answer_list3']; ?></p>
                   </label>
                 </div>
+
+                <?php if (isset($is_true)) : ?>
+                  <p class="answer-tag"><?php echo $is_true[$index]; ?></p>
+                <?php endif; ?>
               </li>
+
             <?php endforeach; ?>
           </ul>
         <?php endif; ?>
 
-        <?php if (isset($is_true)) : ?>
-          <ul>
-            <?php foreach ($is_true as $answer) : ?>
-              <li><?php echo $answer; ?></li>
-            <?php endforeach; ?>
-          </ul>
-        <?php endif; ?>
       </div>
 
-      <button class="check" type="submit">採点する</button>
+      <button class="check" type="submit" id="check-btn">採点する</button>
     </form>
 
     <!-- 正解数によって表示内容を変える -->
-    <div class="answer" id="answer-area">
-      <!-- 文言変更 -->
-      <h2><span>全問正解！</span></h2>
-      <p class="answer__comm">おめでとうございます！<br>チケットを受け取ることができます！！</p>
-      <a href="./get_ticket.php" class="ticket-get"><i class="fas fa-gift"></i>チケットをもらう！！</a>
-    </div>
+    <?php if ($_POST) : ?>
+      <div class="answer" id="answer-area">
+        <!-- 文言変更 -->
+        <h2><span>全問正解！</span></h2>
+        <p class="answer__comm">おめでとうございます！<br>チケットを受け取ることができます！！</p>
+        <a href="./get_ticket.php" class="ticket-get"><i class="fas fa-gift"></i>チケットをもらう！！</a>
+      </div>
+    <?php endif; ?>
   </div>
+
+  <script src="../js/script.js"></script>
 </body>
 
 </html>

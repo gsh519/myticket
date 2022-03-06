@@ -220,11 +220,10 @@ body {
 }
 
 .answer {
-  display: none;
   background-color: $main-color;
   border: 1px solid $font-color;
   padding: 16px;
-  margin-bottom: 40px;
+  margin: 40px 0;
   text-align: center;
   color: $font-color;
   h2 {
@@ -325,4 +324,11 @@ animation-direction:normal;/*7で解説*/
 
 .active {
   display: block;
+}
+
+.answer-tag {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  color: $accent-color;
 }
