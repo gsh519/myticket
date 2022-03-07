@@ -36,6 +36,8 @@ if (!empty($ticket->ticket_id)) {
   if ($user_answers) {
     // 回答をチェック
     $is_true = $question->checkAnswer($user_answers);
+    $percent = $question->changePercent($user_answers);
+    $comment = $question->changeComment($user_answers);
   }
 
   // 3.その回答があっている割合によって表示する内容を変更
