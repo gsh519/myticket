@@ -15,7 +15,7 @@
 <body>
     <div class="wrapper ticket-frame">
         <div class="logo logo--get"><a href="./">myticket</a></div>
-        <h1 class="title"><i class="fas fa-gift"></i>ticket for you</h1>
+        <h1 class="title"><i class="fas fa-gift"></i>ticket for you from yuto</h1>
         <div class="ticket-img fadeIn">
             <img src="./images/gift_img2.png" alt="チケット画像">
         </div>

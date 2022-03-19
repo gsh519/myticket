@@ -84,11 +84,9 @@
 
     <!-- 正解数によって表示内容を変える -->
     <?php if ($_POST) : ?>
+
       <div class="answer" id="answer-area">
-        <!-- 文言変更 -->
-        <h2><span><?php echo $percent; ?></span></h2>
-        <p class="answer__comm"><?php echo $comment; ?></p>
-        <a href="./get_ticket.php" class="ticket-get"><i class="fas fa-gift"></i>チケットをもらう！！</a>
+        <?php echo $question->ticketPage($user_answers); ?>
       </div>
     <?php endif; ?>
   </div>

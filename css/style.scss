@@ -191,8 +191,6 @@ body {
 
     .select-area {
       border: 2px solid #bbb;
-      padding: 12px 8px;
-      min-height: 32px;
       box-sizing: border-box;
       color: #4D4B49;
       border-radius: 15px;
@@ -200,6 +198,7 @@ body {
       label {
         display: flex;
         align-items: center;
+        padding: 12px 8px;
         p {
           margin-left: 10px;
         }

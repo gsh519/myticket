@@ -1,7 +1,6 @@
-const check = document.getElementById('check-btn');
-const answer = document.getElementById('answer-area');
+// const checkBtn = document.getElementById('check-btn');
 
-check.addEventListener('click', function () {
-    console.log('good');
-    answer.classList.toggle('active');
-});
+// checkBtn.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     console.log(e);
+// });
