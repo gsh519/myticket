@@ -86,7 +86,9 @@
     <?php if ($_POST) : ?>
 
       <div class="answer" id="answer-area">
-        <?php echo $question->ticketPage($user_answers); ?>
+        <h2><span><?php echo $percent; ?></span></h2>
+        <p class="answer__comm"><?php echo $comment; ?></p>
+        <a href="./get_ticket.php" class="ticket-get"><i class="fas fa-gift"></i>チケットをもらう！！</a>
       </div>
     <?php endif; ?>
   </div>

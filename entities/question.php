@@ -81,44 +81,4 @@ class Question
             return false;
         }
     }
-
-    public function ticketPage(array $data = [])
-    {
-        $count = 0;
-        $all_count = count($this->questions);
-        foreach ($this->answers as $index => $answer) {
-            if ($data[0]['answer' . $index] === $answer) {
-                $count++;
-            }
-        }
-
-        // 正解数
-        if ($count === $all_count) {
-            $this->percent = '全問正解！！';
-            echo '<h2><span>{$this->percent}</span></h2>';
-        } else {
-            $this->percent = $all_count . '問中' . $count . '問正解';
-            echo '<h2><span>{$this->percent}</span></h2>';
-        }
-
-        // コメント
-        if ($count / $all_count >= 0.7) {
-            $this->comment = 'おめでとうございます！<br>チケットを受け取ることができます！！';
-            echo '<p class="answer__comm">{$this->comment}</p>';
-        } else {
-            $this->comment = '残念！チケットを受け取ることができません';
-            echo '<p class="answer__comm">{$this->comment}</p>';
-        }
-
-        // 合否判定
-        if ($count / $all_count >= 0.7) {
-            $judgement = true;
-        } else {
-            $judgement = false;
-        }
-
-        if ($judgement) {
-            echo '<a href="./get_ticket.php" class="ticket-get"><i class="fas fa-gift"></i>チケットをもらう!!</a>';
-        }
-    }
 }

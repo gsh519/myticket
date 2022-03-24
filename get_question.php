@@ -34,10 +34,10 @@ if (!empty($ticket->ticket_id)) {
 
   if ($user_answers) {
     // 回答をチェック
-    // $is_true = $question->checkAnswer($user_answers);
-    // $percent = $question->changePercent($user_answers);
-    // $comment = $question->changeComment($user_answers);
-    // $ticket_link = $question->showLink($user_answers);
+    $is_true = $question->checkAnswer($user_answers);
+    $percent = $question->changePercent($user_answers);
+    $comment = $question->changeComment($user_answers);
+    $ticket_link = $question->showLink($user_answers);
     // $ticket_page = $question->ticketPage($user_answers);
   }
 
