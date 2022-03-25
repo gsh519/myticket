@@ -27,7 +27,7 @@
                     </a>
                 </div>
                 <div class="item">
-                    <a href="./get.php">
+                    <a href="./ticketid_form.php">
                         <i class="fas fa-gift"></i>
                         チケットをもらう
                     </a>

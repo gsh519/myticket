@@ -23,16 +23,16 @@
 
       <div class="ticketid-form">
         <h2>チケットIDを入力してね！</h2>
-        <form action="" method="GET">
+        <form action="../question.php" method="post">
           <div class="ticketid-form__area">
-            <label for="ticket_id">チケットID</label>
-            <input type="text" id="ticket_id" name="ticket_id" class="ticket_id" placeholder="fanrgargjaf">
+            <label for="ticket_key">チケットID</label>
+            <input type="text" id="ticket_key" name="ticket_key" class="ticket_id" placeholder="fanrgargjaf">
           </div>
           <!-- エラー文表示 -->
-          <?php if (!empty($errors)) : ?>
+          <?php if (!empty($this->errors)) : ?>
             <ul class="ticketid-form__area">
-              <?php foreach ($errors as $error) : ?>
-                <li class="error"><?php echo htmlspecialchars($error, ENT_NOQUOTES); ?></li>
+              <?php foreach ($this->errors as $error) : ?>
+                <li class="error"><?php $this->escape($error); ?></li>
               <?php endforeach ?>
             </ul>
           <?php endif ?>
