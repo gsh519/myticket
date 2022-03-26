@@ -21,13 +21,11 @@
 
     <p class="question-ttl">クイズを解いてチケットをもらおう!</p>
     <!-- エラー文表示 -->
-    <?php if (isset($errors)) : ?>
-      <ul class="ticketid-form__area">
-        <?php foreach ($errors as $error) : ?>
-          <li class="error"><?php echo htmlspecialchars($error, ENT_QUOTES); ?></li>
-        <?php endforeach ?>
-      </ul>
-    <?php endif ?>
+    <ul class="ticketid-form__area">
+      <?php foreach ($this->errors as $error) : ?>
+        <li class="error"><?php $this->escape($error); ?></li>
+      <?php endforeach ?>
+    </ul>
     <form action="" method="POST">
       <div class="questions">
 
@@ -88,7 +86,9 @@
       <div class="answer" id="answer-area">
         <h2><span><?php echo $percent; ?></span></h2>
         <p class="answer__comm"><?php echo $comment; ?></p>
-        <a href="./get_ticket.php" class="ticket-get"><i class="fas fa-gift"></i>チケットをもらう！！</a>
+        <?php if ($ticket_link) : ?>
+          <a href="./get_ticket.php" class="ticket-get"><i class="fas fa-gift"></i>チケットをもらう！！</a>
+        <?php endif; ?>
       </div>
     <?php endif; ?>
   </div>

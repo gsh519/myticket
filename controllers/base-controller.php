@@ -23,6 +23,6 @@ abstract class BaseController
     public function escape($res)
     {
         $res = htmlspecialchars($res, ENT_QUOTES);
-        return $res;
+        echo $res;
     }
 }
