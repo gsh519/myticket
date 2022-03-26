@@ -21,7 +21,7 @@
 
             <div class="hero__link">
                 <div class="item">
-                    <a href="./create.php">
+                    <a href="./login.php">
                         <i class="fas fa-hand-holding-heart"></i>
                         チケットをわたす
                     </a>

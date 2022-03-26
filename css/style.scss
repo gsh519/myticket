@@ -7,21 +7,21 @@ $font-color: #5E2D01;
 $accent-color: #E1134B;
 
 body {
-  background-color: $sub-color;
+background-color: $sub-color;
 }
 
 ::placeholder {
-  color: rgb(156, 156, 156);
+color: rgb(156, 156, 156);
 }
 
 .wrapper {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 16px;
+max-width: 900px;
+margin: 0 auto;
+padding: 16px;
 }
 
 .logo {
-  a {
+a {
     font-size: 20px;
     color: $accent-color;
     font-weight: bold;
@@ -30,41 +30,41 @@ body {
     font-family: 'follana', sans-serif;
     display: block;
     letter-spacing: 1.5px;
-  }
-  &--get {
+}
+&--get {
     margin-bottom: 50px;
-  }
+}
 }
 
 .title {
-  text-align: center;
-  font-size: 26px;
-  font-weight: bold;
-  color: $accent-color;
-  margin-bottom: 30px;
+text-align: center;
+font-size: 26px;
+font-weight: bold;
+color: $accent-color;
+margin-bottom: 30px;
 }
 
 .hero {
-  background: url("../images/hero_heart.gif");
-  background-size: contain;
-  height: 100vh;
-  &__ttl {
+background: url("../images/hero_heart.gif");
+background-size: contain;
+height: 100vh;
+&__ttl {
     background-image: url("..//images/heart_ttl.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
     height: 350px;
-  }
+}
 
-  &__link {
+&__link {
     .item {
-      margin-bottom: 40px;
-      text-align: center;
-      &:nth-of-type(2) {
+    margin-bottom: 40px;
+    text-align: center;
+    &:nth-of-type(2) {
         margin-bottom: 0;
-      }
-      a {
+    }
+    a {
         background: $accent-color;
         color: #fff;
         box-shadow: 0 0 0 1px $accent-color;
@@ -73,78 +73,78 @@ body {
         font-size: 20px;
         display: block;
         border-radius: 15px;
-      }
     }
-  }
+    }
+}
 }
 
 .ticketid-form {
-  background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 1px 1px 1px 1px #ccc;
-  padding: 16px;
-  h2 {
+background-color: #fff;
+border-radius: 15px;
+box-shadow: 1px 1px 1px 1px #ccc;
+padding: 16px;
+h2 {
     margin-bottom: 30px;
     color: $font-color;
     font-weight: bold;
     font-size: 16px;
     text-align: center;
-  }
+}
 
-  &__area {
+&__area {
     margin-bottom: 20px;
     &--right {
-      text-align: right;
+    text-align: right;
     }
     label {
-      display: block;
-      font-size: 16px;
-      color: $font-color;
-      margin-bottom: 20px;
+    display: block;
+    font-size: 16px;
+    color: $font-color;
+    margin-bottom: 20px;
     }
     .ticket_id {
-      display: block;
-      width: 100%;
-      height: 50px;
-      background-color: #DDD2C9;
-      border-radius: 15px;
-      outline: #DDD2C9;
-      padding: 16px;
-      color: $font-color;
+    display: block;
+    width: 100%;
+    height: 50px;
+    background-color: #DDD2C9;
+    border-radius: 15px;
+    outline: #DDD2C9;
+    padding: 16px;
+    color: $font-color;
     }
 
     .submit {
-      background-color: #DDD2C9;
-      padding: 12px 24px;
-      border-radius: 15px;
-      font-weight: bold;
-      color: $font-color;
+    background-color: #DDD2C9;
+    padding: 12px 24px;
+    border-radius: 15px;
+    font-weight: bold;
+    color: $font-color;
     }
-  }
+}
 }
 
 .error {
-  text-align: center;
-  font-size: 16px;
-  color: $accent-color;
+text-align: center;
+font-size: 16px;
+color: $accent-color;
 }
 
 .question-ttl {
-  text-align: center;
-  font-size: 18px;
-  color: $accent-color;
-  font-weight: bold;
-  margin-bottom: 10px;
+text-align: center;
+font-size: 18px;
+color: $accent-color;
+font-weight: bold;
+margin-bottom: 10px;
 }
 
 .question-start {
-  h1 {
+h1 {
     text-align: center;
     font-size: 24px;
     color: $font-color;
     margin-bottom: 50px;
-  }
-  #start-box {
+}
+#start-box {
     display: block;
     background-color: $accent-color;
     color: #fff;
@@ -153,101 +153,101 @@ body {
     padding: 24px;
     text-align: center;
     border-radius: 15px;
-  }
+}
 }
 
 .questions {
-  margin-bottom: 30px;
-  &__item {
+margin-bottom: 30px;
+&__item {
     background-color: $main-color;
     border: 1px solid $font-color;
     padding: 16px;
     margin-bottom: 20px;
     &:last-child {
-      margin-bottom: 0;
+    margin-bottom: 0;
     }
     .question-number {
-      color: $font-color;
-      font-size: 24px;
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: 20px;
-      span {
+    color: $font-color;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    span {
         font-size: 34px;
-      }
+    }
     }
 
     .question-subject {
-      font-size: 18px;
-      text-align: left;
-      margin-bottom: 20px;
+    font-size: 18px;
+    text-align: left;
+    margin-bottom: 20px;
     }
 
     .question-comm {
-      font-size: 12px;
-      color: #7b7676;
-      margin-bottom: 10px;
+    font-size: 12px;
+    color: #7b7676;
+    margin-bottom: 10px;
     }
 
     .select-area {
-      border: 2px solid #bbb;
-      box-sizing: border-box;
-      color: #4D4B49;
-      border-radius: 15px;
-      margin-bottom: 10px;
-      label {
+    border: 2px solid #bbb;
+    box-sizing: border-box;
+    color: #4D4B49;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    label {
         display: flex;
         align-items: center;
         padding: 12px 8px;
         p {
-          margin-left: 10px;
+        margin-left: 10px;
         }
-      }
     }
-  }
+    }
+}
 
 }
 
 .check {
-  cursor: pointer;
-  display: block;
-  width: 100%;
-  padding: 16px;
-  background-color: $accent-color;
-  color: #fff;
-  text-align: center;
+cursor: pointer;
+display: block;
+width: 100%;
+padding: 16px;
+background-color: $accent-color;
+color: #fff;
+text-align: center;
 }
 
 .answer {
-  background-color: $main-color;
-  border: 1px solid $font-color;
-  padding: 16px;
-  margin: 40px 0;
-  text-align: center;
-  color: $font-color;
-  h2 {
+background-color: $main-color;
+border: 1px solid $font-color;
+padding: 16px;
+margin: 40px 0;
+text-align: center;
+color: $font-color;
+h2 {
     font-size: 20px;
     margin-bottom: 20px;
     span {
-      font-size: 40px;
-      color: $accent-color;
-      font-weight: bold;
+    font-size: 40px;
+    color: $accent-color;
+    font-weight: bold;
     }
-  }
+}
 
-  &__list {
+&__list {
     text-align: center;
     margin-bottom: 20px;
     li {
-      color: blue;
+    color: blue;
     }
-  }
+}
 
-  &__comm {
+&__comm {
     margin-bottom: 20px;
-  }
+}
 
-  .ticket-get {
+.ticket-get {
     display: block;
     width: 100%;
     padding: 16px;
@@ -255,25 +255,25 @@ body {
     color: #fff;
     text-align: center;
     border-radius: 30px;
-  }
+}
 }
 
 .fa-gift {
-  margin-right: 10px;
+margin-right: 10px;
 }
 
 .ticket-frame {
-  padding-bottom: 32px;
+padding-bottom: 32px;
 }
 
 .ticket-img {
-  text-align: center;
-  max-width: 600px;
-  width: 100%;
-  margin: 0 auto 30px;
-  img {
+text-align: center;
+max-width: 600px;
+width: 100%;
+margin: 0 auto 30px;
+img {
     width: 100%;
-  }
+}
 }
 
 .fadeIn {
@@ -288,46 +288,118 @@ animation-direction:normal;/*7で解説*/
 
 /*1で解説*/
 @keyframes fadeInAnime{
-  0% {
+0% {
     opacity: 0;
-  }
+}
 
-  100% {
+100% {
     opacity: 1;
-  }
+}
 }
 
 .info {
-  text-align: center;
-  color: $font-color;
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 30px;
+text-align: center;
+color: $font-color;
+font-size: 18px;
+font-weight: bold;
+margin-bottom: 30px;
 }
 
 .ticket-link {
-  color: #fff;
-  background-color: $accent-color;
-  display: block;
-  width: 100px;
-  border-radius: 15px;
-  padding: 16px;
-  font-weight: bold;
-  font-size: 16px;
-  text-align: center;
-  margin: 0 auto;
-  &--store {
-    margin-bottom: 20px;
-  }
+    color: #fff;
+    background-color: $accent-color;
+    display: block;
+    width: 100px;
+    border-radius: 15px;
+    padding: 16px;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    margin: 0 auto;
+    &--store {
+        margin-bottom: 20px;
+    }
 }
 
 .active {
-  display: block;
+    display: block;
 }
 
 .answer-tag {
-  text-align: center;
-  font-weight: bold;
-  font-size: 30px;
-  color: $accent-color;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    color: $accent-color;
+}
+
+.login-title {
+    h1 {
+        font-size: 24px;
+        text-align: center;
+        color: $accent-color;
+    }
+}
+
+.login-form {
+    max-width: 80%;
+    margin: 24px auto 0;
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 1px 1px 1px 1px #ddd;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 20px;
+    color: $font-color;
+    h1 {
+        margin-bottom: 24px;
+        font-size: 36px;
+        font-weight: bold;
+        color: $font-color;
+    }
+}
+
+.form-area {
+    &--btn {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    margin-bottom: 24px;
+    label {
+        display: block;
+        text-align: left;
+        margin-bottom: 16px;
+        font-weight: bold;
+    }
+
+    input {
+        display: block;
+        width: 100%;
+        height: 50px;
+        background-color: #DDD2C9;
+        border-radius: 15px;
+        outline: #DDD2C9;
+        padding: 16px;
+        text-align: left;
+        color: #5E2D01;
+    }
+
+    small {
+        margin-left: 10px;
+        font-size: 14px;
+        color: $accent-color;
+    }
+
+    .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 16%;
+        padding: 8px;
+        background-color: $accent-color;
+        color: #fff;
+        &:hover {
+            opacity: 0.9;
+        }
+    }
 }
