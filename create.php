@@ -1,2 +1,5 @@
 <?php
-echo 'good';
+require("./controllers/create-controller.php");
+
+$controller = new CreateController();
+$controller->main();

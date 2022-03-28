@@ -16,11 +16,11 @@
     <div class="wrapper">
         <div class="logo logo--get"><a href="./">myticket</a></div>
         <div class="login-title">
-            <h1>チケットを作成するにはログインしてね！！</h1>
+            <h1>チケットを作成するにはアカウントを作成してね！！</h1>
         </div>
 
         <div class="login-form">
-            <h1>ログイン</h1>
+            <h1>サインアップ</h1>
             <!-- エラー表示 -->
             <?php if ($this->errors) : ?>
                 <ul>
@@ -47,11 +47,6 @@
                     <input type="submit" name="add-user" class="btn" value="ログイン">
                 </div>
             </form>
-        </div>
-
-        <div class="signup-btn">
-            <p>※アカウントをお持ちでない方</p>
-            <a href="./signup.php">アカウント作成</a>
         </div>
 
     </div>

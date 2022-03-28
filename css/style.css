@@ -121,8 +121,9 @@ body {
 }
 
 .error {
+  margin-bottom: 20px;
   text-align: center;
-  font-size: 16px;
+  font-size: 18px;
   color: #E1134B;
 }
 
@@ -374,9 +375,7 @@ body {
 }
 
 .form-area--btn {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  text-align: right;
 }
 
 .form-area label {
@@ -405,15 +404,42 @@ body {
 }
 
 .form-area .btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 16%;
+  display: inline-block;
+  width: auto;
   padding: 8px;
   background-color: #E1134B;
+  text-align: center;
   color: #fff;
 }
 
 .form-area .btn:hover {
+  opacity: 0.9;
+}
+
+.signup-btn {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.signup-btn p {
+  margin-bottom: 8px;
+  font-size: 20px;
+  color: #5E2D01;
+}
+
+.signup-btn a {
+  display: inline-block;
+  width: auto;
+  padding: 8px;
+  background-color: #E1134B;
+  text-align: center;
+  color: #fff;
+  height: 50px;
+  border-radius: 15px;
+  outline: #DDD2C9;
+  padding: 16px;
+}
+
+.signup-btn a:hover {
   opacity: 0.9;
 }
