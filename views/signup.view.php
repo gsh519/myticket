@@ -21,6 +21,10 @@
 
         <div class="login-form">
             <h1>サインアップ</h1>
+            <?php if (!empty($_SESSION['msg'])) : ?>
+                <p class="message"><?php $this->escape($_SESSION['msg']); ?></p>
+                <?php unset($_SESSION['msg']); ?>
+            <?php endif; ?>
             <!-- エラー表示 -->
             <?php if ($this->errors) : ?>
                 <ul>
@@ -44,7 +48,7 @@
                 </div>
 
                 <div class="form-area form-area--btn">
-                    <input type="submit" name="add-user" class="btn" value="ログイン">
+                    <input type="submit" name="add-user" class="btn" value="新規作成">
                 </div>
             </form>
         </div>
