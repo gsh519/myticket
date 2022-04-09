@@ -9,13 +9,10 @@ class Question
     private $comment;
     private $percent;
 
-    public function __construct($subject = [], $question_answers = [])
+    public function __construct($questions = [])
     {
-        if (isset($subject)) {
-            $this->subject = $subject;
-        }
-        if (isset($question_answers)) {
-            $this->question_answers = $question_answers;
+        if (isset($questions)) {
+            $this->questions = $questions;
         }
     }
 

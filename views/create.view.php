@@ -55,33 +55,42 @@
                     <h2>クイズを作成</h2>
                     <div class="ticketid-form__area ticketid-form__area--question">
                         <label for="subject">クイズ１</label>
-                        <input type="text" id="subject" name="subject[]" class="ticket_id ticket_question_form" placeholder="悠斗の誕生日は？">
+                        <input type="text" id="subject" name="questions[0][subject]" class="ticket_id ticket_question_form" placeholder="悠斗の誕生日は？">
 
-                        <label for="answer_list1">答え</label>
-                        <input type="text" name="answers['answer_list0'][]" class="ticket_id ticket_question_form" placeholder="3月11日">
-                        <input type="text" name="answers['answer_list0'][]" class="ticket_id ticket_question_form" placeholder="5月19日">
-                        <input type="text" name="answers['answer_list0'][]" class="ticket_id ticket_question_form" placeholder="8月20日">
+                        <label for="answer_list1">答え選択肢</label>
+                        <input type="text" name="questions[0][answer_list1]" class="ticket_id ticket_question_form" placeholder="3月11日">
+                        <input type="text" name="questions[0][answer_list2]" class="ticket_id ticket_question_form" placeholder="5月19日">
+                        <input type="text" name="questions[0][answer_list3]" class="ticket_id ticket_question_form" placeholder="8月20日">
+
+                        <label for="answer">答え</label>
+                        <input type="text" id="answer" name="questions[0][answer]" class="ticket_id ticket_question_form" placeholder="5月19日">
                     </div>
 
 
                     <div class="ticketid-form__area ticketid-form__area--question">
                         <label for="subject">クイズ2</label>
-                        <input type="text" id="subject" name="subject[]" class="ticket_id ticket_question_form" placeholder="芽衣の誕生日は？">
+                        <input type="text" id="subject" name="questions[1][subject]" class="ticket_id ticket_question_form" placeholder="芽衣の誕生日は？">
 
-                        <label for="answer_list2">答え</label>
-                        <input type="text" name="answers['answer_list1'][]" class="ticket_id ticket_question_form" placeholder="2月13日">
-                        <input type="text" name="answers['answer_list1'][]" class="ticket_id ticket_question_form" placeholder="5月19日">
-                        <input type="text" name="answers['answer_list1'][]" class="ticket_id ticket_question_form" placeholder="8月20日">
+                        <label for="answer_list2">答え選択肢</label>
+                        <input type="text" name="questions[1][answer_list1]" class="ticket_id ticket_question_form" placeholder="2月13日">
+                        <input type="text" name="questions[1][answer_list2]" class="ticket_id ticket_question_form" placeholder="5月19日">
+                        <input type="text" name="questions[1][answer_list3]" class="ticket_id ticket_question_form" placeholder="8月20日">
+
+                        <label for="answer">答え</label>
+                        <input type="text" id="answer" name="questions[1][answer]" class="ticket_id ticket_question_form" placeholder="2月13日">
                     </div>
 
                     <div class="ticketid-form__area ticketid-form__area--question">
                         <label for="subject">クイズ3</label>
-                        <input type="text" id="subject" name="subject[]" class="ticket_id ticket_question_form" placeholder="好きな食べ物は？">
+                        <input type="text" id="subject" name="questions[2][subject]" class="ticket_id ticket_question_form" placeholder="好きな食べ物は？">
 
-                        <label for="answer_list2">答え</label>
-                        <input type="text" name="answers['answer_list2][]" class="ticket_id ticket_question_form" placeholder="ラーメン">
-                        <input type="text" name="answers['answer_list2][]" class="ticket_id ticket_question_form" placeholder="そば">
-                        <input type="text" name="answers['answer_list2][]" class="ticket_id ticket_question_form" placeholder="うどん">
+                        <label for="answer_list2">答え選択肢</label>
+                        <input type="text" name="questions[2][answer_list1]" class="ticket_id ticket_question_form" placeholder="ラーメン">
+                        <input type="text" name="questions[2][answer_list2]" class="ticket_id ticket_question_form" placeholder="そば">
+                        <input type="text" name="questions[2][answer_list3]" class="ticket_id ticket_question_form" placeholder="うどん">
+
+                        <label for="answer">答え</label>
+                        <input type="text" id="answer" name="questions[2][answer]" class="ticket_id ticket_question_form" placeholder="ラーメン">
                     </div>
 
                     <!-- 作成ボタン -->
