@@ -1,13 +1,23 @@
 <?php
 class Question
 {
-    public $subject = null;
+    public $subject = [];
+    public $question_answers = [];
     public $questions = [];
     public $answers = [];
     private $is_true = [];
     private $comment;
     private $percent;
-    private $judgement;
+
+    public function __construct($subject = [], $question_answers = [])
+    {
+        if (isset($subject)) {
+            $this->subject = $subject;
+        }
+        if (isset($question_answers)) {
+            $this->question_answers = $question_answers;
+        }
+    }
 
     /**
      * 渡ってきた回答を正しい回答とチェックさせる

@@ -22,27 +22,78 @@
             </h1>
 
             <div class="ticketid-form">
-                <h2>チケットIDを入力してね！</h2>
+                <h2>チケットをつくろう</h2>
 
+                <!-- 成功メッセージ表示 -->
+                <?php if (!empty($_SESSION['msg'])) : ?>
+                    <p class="message"><?php $this->escape($_SESSION['msg']); ?></p>
+                    <?php unset($_SESSION['msg']); ?>
+                <?php endif; ?>
+
+                <!-- エラー表示 -->
                 <ul>
                     <?php foreach ($this->errors as $error) : ?>
                         <li><?php $this->escape($error); ?></li>
                     <?php endforeach; ?>
                 </ul>
 
-                <form action="" method="post">
+                <form action="" method="post" enctype="multipart/form-data">
+
+                    <!-- 画像 -->
                     <div class="ticketid-form__area">
-                        <label for="ticket_key">チケットID</label>
-                        <input type="text" id="ticket_key" name="ticket_key" class="ticket_id" placeholder="fanrgargjaf">
+                        <label for="ticket_img">チケット画像</label>
+                        <input type="file" id="ticket_img" name="ticket_img">
                     </div>
+
+                    <!-- コメント -->
+                    <div class="ticketid-form__area">
+                        <label for="ticket_comment">チケットにつけるコメント</label>
+                        <input type="text" id="ticket_comment" name="ticket_comment" class="ticket_id" placeholder="fanrgargjaf">
+                    </div>
+
+                    <!-- クイズ作成 -->
+                    <h2>クイズを作成</h2>
+                    <div class="ticketid-form__area ticketid-form__area--question">
+                        <label for="subject">クイズ１</label>
+                        <input type="text" id="subject" name="subject[]" class="ticket_id ticket_question_form" placeholder="悠斗の誕生日は？">
+
+                        <label for="answer_list1">答え</label>
+                        <input type="text" name="answers['answer_list0'][]" class="ticket_id ticket_question_form" placeholder="3月11日">
+                        <input type="text" name="answers['answer_list0'][]" class="ticket_id ticket_question_form" placeholder="5月19日">
+                        <input type="text" name="answers['answer_list0'][]" class="ticket_id ticket_question_form" placeholder="8月20日">
+                    </div>
+
+
+                    <div class="ticketid-form__area ticketid-form__area--question">
+                        <label for="subject">クイズ2</label>
+                        <input type="text" id="subject" name="subject[]" class="ticket_id ticket_question_form" placeholder="芽衣の誕生日は？">
+
+                        <label for="answer_list2">答え</label>
+                        <input type="text" name="answers['answer_list1'][]" class="ticket_id ticket_question_form" placeholder="2月13日">
+                        <input type="text" name="answers['answer_list1'][]" class="ticket_id ticket_question_form" placeholder="5月19日">
+                        <input type="text" name="answers['answer_list1'][]" class="ticket_id ticket_question_form" placeholder="8月20日">
+                    </div>
+
+                    <div class="ticketid-form__area ticketid-form__area--question">
+                        <label for="subject">クイズ3</label>
+                        <input type="text" id="subject" name="subject[]" class="ticket_id ticket_question_form" placeholder="好きな食べ物は？">
+
+                        <label for="answer_list2">答え</label>
+                        <input type="text" name="answers['answer_list2][]" class="ticket_id ticket_question_form" placeholder="ラーメン">
+                        <input type="text" name="answers['answer_list2][]" class="ticket_id ticket_question_form" placeholder="そば">
+                        <input type="text" name="answers['answer_list2][]" class="ticket_id ticket_question_form" placeholder="うどん">
+                    </div>
+
+                    <!-- 作成ボタン -->
                     <div class="ticketid-form__area ticketid-form__area--right">
-                        <input type="submit" class="submit" name="submit" value="送信">
+                        <input type="submit" class="submit" name="create" value="作成">
                     </div>
                 </form>
 
             </div>
         </div>
     </div>
+
 </body>
 
 </html>
