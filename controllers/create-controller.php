@@ -42,7 +42,7 @@ class CreateController extends BaseController
 
                 if ($res) {
                     $_SESSION['msg'] = 'チケットが作成できました';
-                    header("Location: ./created_ticket.php");
+                    header("Location: ./created_ticket.php?ticket_key={$ticket->ticket_key}");
                     exit;
                 }
             } catch (Exception $e) {

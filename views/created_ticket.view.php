@@ -28,13 +28,54 @@
                 <li><?php $this->escape($error); ?></li>
             <?php endforeach; ?>
         </ul>
+        <p class="info">チケットやクイズはいつでも変更できます！</p>
 
-        <h1 class="title"><i class="fas fa-gift"></i>ticket for you from yuto</h1>
+        <!-- チケット画像表示 -->
         <div class="ticket-img fadeIn">
             <img src="./images/gift_img2.png" alt="チケット画像">
         </div>
-        <p class="info">この画像を保存して<br>当日はこのチケットを見せてね！！</p>
-        <a href="#" class="ticket-link ticket-link--store">画像保存</a>
+
+        <!-- チケットコメント表示 -->
+        <p class="info"><?php $this->escape($this->ticket['ticket_comment']); ?></p>
+
+        <!-- クイズ表示 -->
+        <?php if (isset($this->questions)) : ?>
+            <ul>
+                <?php foreach ($this->questions as $index => $question) : ?>
+
+                    <!-- これが一つの問題 -->
+                    <li class="questions__item">
+                        <p class="question-number"><span><?php echo $index + 1; ?></span>問目</p>
+                        <h2 class="question-subject"><?php echo $question['subject']; ?></h2>
+                        <p class="question-comm">正解だと思うものを１つ選んでください</p>
+
+                        <div class="select-area">
+                            <label for="answer_1<?php echo $index; ?>">
+                                <input required type="radio" class="select-box" name="answer<?php echo $index; ?>" value="" id="answer_1<?php echo $index; ?>">
+                                <p><?php echo $question['answer_list1']; ?></p>
+                            </label>
+                        </div>
+
+                        <div class="select-area">
+                            <label for="answer_2<?php echo $index; ?>">
+                                <input required type="radio" class="select-box" name="answer<?php echo $index; ?>" value="" id="answer_2<?php echo $index; ?>">
+                                <p><?php echo $question['answer_list2']; ?></p>
+                            </label>
+                        </div>
+
+                        <div class="select-area">
+                            <label for="answer_3<?php echo $index; ?>">
+                                <input required type="radio" class="select-box" name="answer<?php echo $index; ?>" value="" id="answer_3<?php echo $index; ?>">
+                                <p><?php echo $question['answer_list3']; ?></p>
+                            </label>
+                        </div>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        <?php endif; ?>
+
+
+        <a href="#" class="ticket-link ticket-link--store">修正する</a>
         <a href="/" class="ticket-link">Home</a>
     </div>
 </body>
