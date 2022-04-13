@@ -33,7 +33,7 @@
 
                 <!-- ユーザー名 -->
                 <div class="form-area">
-                    <label for="username">ユーザー名<small>※ユーザー名は登録したあとに変更できません</small></label>
+                    <label for="username">ユーザー名</label>
                     <input type="text" name="username" id="username" class="username" placeholder="myticket" value="<?php $this->escape($user->username); ?>">
                 </div>
 

@@ -36,11 +36,11 @@
         </div>
 
         <!-- チケットコメント表示 -->
-        <p class="info"><?php $this->escape($this->ticket['ticket_comment']); ?></p>
+        <p class="ticket_comment-info"><?php $this->escape($this->ticket['ticket_comment']); ?></p>
 
         <!-- クイズ表示 -->
         <?php if (isset($this->questions)) : ?>
-            <ul>
+            <ul class="quiz-list">
                 <?php foreach ($this->questions as $index => $question) : ?>
 
                     <!-- これが一つの問題 -->

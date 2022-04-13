@@ -41,8 +41,9 @@
 
                     <!-- 画像 -->
                     <div class="ticketid-form__area">
-                        <label for="ticket_img">チケット画像</label>
-                        <input type="file" id="ticket_img" name="ticket_img">
+                        <label for="ticket_img">
+                            <input type="file" id="ticket_img" name="ticket_img">チケット画像を選択
+                        </label>
                     </div>
 
                     <!-- コメント -->
