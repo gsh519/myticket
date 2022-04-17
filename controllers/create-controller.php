@@ -10,15 +10,32 @@ class CreateController extends BaseController
             $ticket = new Ticket($_POST, $_FILES);
             $questions = new Question($_POST['questions']);
 
-            $add_ticket = [];
-            $add_ticket[':ticket_key'] = $ticket->ticket_key;
-            $add_ticket[':ticket_img'] = $ticket->ticket_img;
-            $add_ticket[':ticket_comment'] = $ticket->ticket_comment;
-
             $this->db->beginTransaction();
 
             try {
+                // 画像を保存する処理
+                $add_image = [];
+                $add_image[':image_name'] = $ticket->image_name;
+                $add_image[':image_type'] = $ticket->image_type;
+                $add_image[':image_content'] = $ticket->image_content;
+                $add_image[':image_size'] = $ticket->image_size;
+
+                $image_sql = "INSERT INTO image (image_name, image_type, image_content, image_size) VALUES (:image_name, :image_type, :image_content, :image_size)";
+                $image_stmt = $this->db->prepare($image_sql);
+                $image_stmt->execute($add_image);
+
+                // 追加した画像のidを取得する
+                $select_sql = "SELECT id FROM image ORDER BY id DESC LIMIT 1";
+                $select_stmt = $this->db->prepare($select_sql);
+                $select_stmt->execute();
+                $image_id = $select_stmt->fetch(PDO::FETCH_ASSOC);
+
                 // チケット情報を追加する処理
+                $add_ticket = [];
+                $add_ticket[':ticket_key'] = $ticket->ticket_key;
+                $add_ticket[':ticket_img'] = $image_id['id'];
+                $add_ticket[':ticket_comment'] = $ticket->ticket_comment;
+
                 $add_sql = "INSERT INTO ticket (ticket_key, ticket_img, ticket_comment) VALUES (:ticket_key, :ticket_img, :ticket_comment)";
                 $add_stmt = $this->db->prepare($add_sql);
                 $add_stmt->execute($add_ticket);

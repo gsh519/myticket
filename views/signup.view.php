@@ -20,7 +20,7 @@
         </div>
 
         <div class="login-form">
-            <h1>サインアップ</h1>
+            <h1>アカウント作成</h1>
             <?php if (!empty($_SESSION['msg'])) : ?>
                 <p class="message"><?php $this->escape($_SESSION['msg']); ?></p>
                 <?php unset($_SESSION['msg']); ?>
