@@ -32,7 +32,7 @@
 
         <!-- チケット画像表示 -->
         <div class="ticket-img fadeIn">
-            <img src="./images/gift_img2.png" alt="チケット画像">
+            <img src="<?php echo $this->escape($this->ticket['image_path']); ?>" alt="チケット画像">
         </div>
 
         <!-- チケットコメント表示 -->

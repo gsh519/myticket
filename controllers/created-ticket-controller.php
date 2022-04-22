@@ -1,5 +1,6 @@
 <?php
 require("./controllers/base-controller.php");
+require("./modules/image.php");
 require("./entities/ticket.php");
 require("./entities/question.php");
 class CreatedTicketController extends BaseController
@@ -15,10 +16,10 @@ class CreatedTicketController extends BaseController
             // チケット情報取得
             $get_ticket_param = [];
             $get_ticket_param[':ticket_key'] = $ticket_key;
-            $get_ticket_sql = "SELECT * FROM ticket WHERE ticket_key = :ticket_key";
+            $get_ticket_sql = "SELECT * FROM ticket LEFT JOIN image ON ticket.ticket_img = image.id WHERE ticket_key = :ticket_key";
             $get_ticket_stmt = $this->db->prepare($get_ticket_sql);
             $get_ticket_stmt->execute($get_ticket_param);
-            $this->ticket = $get_ticket_stmt->fetch();
+            $this->ticket = $get_ticket_stmt->fetch(PDO::FETCH_ASSOC);
 
             // クイズ情報取得
             $get_question_param = [];
@@ -29,7 +30,20 @@ class CreatedTicketController extends BaseController
             $this->questions = $get_question_stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
-
         require("./views/created_ticket.view.php");
     }
+
+    // public function exportImage()
+    // {
+    //     $content_type = [
+    //         'png' => 'image/png',
+    //         'jpg' => 'image/jpeg',
+    //         'jpeg' => 'image/jpeg',
+    //         'gif' => 'image/gif',
+    //         'bmp' => 'image/bmp',
+    //     ];
+    //     header('Content-type: ' . $content_type[$this->ticket['image_type']]);
+    //     return $this->ticket['image_content'];
+    //     exit();
+    // }
 }
