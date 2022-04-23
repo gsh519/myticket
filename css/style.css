@@ -493,6 +493,10 @@ label[for="ticket_img"]:hover {
   justify-content: space-between;
 }
 
+.edit-image {
+  text-align: center;
+}
+
 .edit-image img {
   max-width: 80%;
 }

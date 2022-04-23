@@ -80,6 +80,11 @@
                         <div class="ticketid-form__area ticketid-form__area--right">
                             <input type="submit" class="submit" name="edit" value="編集する">
                         </div>
+
+                        <!-- 編集ボタン -->
+                        <div class="ticketid-form__area ticketid-form__area--right">
+                            <input type="submit" class="submit" name="delete" value="削除する">
+                        </div>
                     </div>
                 </form>
 

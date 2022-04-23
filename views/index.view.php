@@ -19,6 +19,12 @@
             <div class="logo"><a href="./">myticket</a></div>
             <h1 class="hero__ttl"></h1>
 
+            <!-- 成功メッセージ表示 -->
+            <?php if (!empty($_SESSION['msg'])) : ?>
+                <p class="message"><?php $this->escape($_SESSION['msg']); ?></p>
+                <?php unset($_SESSION['msg']); ?>
+            <?php endif; ?>
+
             <div class="hero__link">
                 <div class="item">
                     <a href="./login.php">
