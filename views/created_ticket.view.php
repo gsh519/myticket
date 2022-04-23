@@ -75,7 +75,7 @@
         <?php endif; ?>
 
 
-        <a href="#" class="ticket-link ticket-link--store">修正する</a>
+        <a href="./edit.php?ticket_key=<?php $this->escape($ticket_key); ?>" class="ticket-link ticket-link--store">修正する</a>
         <a href="/" class="ticket-link">Home</a>
     </div>
 </body>

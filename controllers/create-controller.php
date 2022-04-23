@@ -70,7 +70,6 @@ class CreateController extends BaseController
                 } catch (Exception $e) {
                     $this->db->rollBack();
                     echo 'チケットが作成できませんでした:' . $e;
-                    return false;
                 }
             }
         }

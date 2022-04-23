@@ -1,6 +1,5 @@
 <?php
 require("./controllers/base-controller.php");
-require("./modules/image.php");
 require("./entities/ticket.php");
 require("./entities/question.php");
 class CreatedTicketController extends BaseController
@@ -32,18 +31,4 @@ class CreatedTicketController extends BaseController
 
         require("./views/created_ticket.view.php");
     }
-
-    // public function exportImage()
-    // {
-    //     $content_type = [
-    //         'png' => 'image/png',
-    //         'jpg' => 'image/jpeg',
-    //         'jpeg' => 'image/jpeg',
-    //         'gif' => 'image/gif',
-    //         'bmp' => 'image/bmp',
-    //     ];
-    //     header('Content-type: ' . $content_type[$this->ticket['image_type']]);
-    //     return $this->ticket['image_content'];
-    //     exit();
-    // }
 }

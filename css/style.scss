@@ -470,3 +470,14 @@ label[for="ticket_img"] {
 label[for="ticket_img"]:hover {
     opacity: 0.8;
 }
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit-image {
+    img {
+        max-width: 80%;
+    }
+}
