@@ -28,6 +28,8 @@ class EditController extends BaseController
             $get_question_stmt = $this->db->prepare($get_question_sql);
             $get_question_stmt->execute($get_question_param);
             $this->questions = $get_question_stmt->fetchAll(PDO::FETCH_ASSOC);
+            // var_dump($this->questions);
+            // die;
         }
 
         // 編集ボタン押されたら
@@ -35,6 +37,11 @@ class EditController extends BaseController
             // 新しく投稿されたデータをセット
             $new_ticket = new Ticket($_POST, $_FILES);
             $new_questions = new Question($_POST['questions']);
+            // die('ok');
+            // var_dump($new_questions->questions);
+            // die;
+            // var_dump($this->ticket, $new_ticket);
+            // die;
             // ファイルに画像を保存
             $upload_dir = 'upload_images/';
             $save_image_name = date('YmdHis') . $new_ticket->image_name;
@@ -51,11 +58,15 @@ class EditController extends BaseController
                 // クイズデータ
                 // var_dump($this->ticket);
                 // die;
-
                 // 画像を更新する処理
                 $update_image = [];
-                $update_image[':image_name'] = $new_ticket->image_name;
-                $update_image[':image_path'] = $save_path;
+                if ($new_ticket->image_name === '' && is_null($new_ticket->image_content)) {
+                    $update_image[':image_name'] = $this->ticket['image_name'];
+                    $update_image[':image_path'] = $this->ticket['image_path'];
+                } else {
+                    $update_image[':image_name'] = $new_ticket->image_name;
+                    $update_image[':image_path'] = $save_path;
+                }
                 $update_image[':id'] = $this->ticket['ticket_img'];
                 $image_sql = "UPDATE image SET image_name = :image_name, image_path = :image_path WHERE id = :id";
                 $image_stmt = $this->db->prepare($image_sql);
@@ -73,15 +84,15 @@ class EditController extends BaseController
                 // die;
 
                 // クエスチョン情報を更新する処理
-                foreach ($new_questions->questions as $question) {
+                foreach ($new_questions->questions as $i => $question) {
                     $update_question = [];
-                    $update_question[':ticket_key'] = $this->ticket['ticket_key'];
+                    $update_question[':id'] = $this->questions[$i]['id'];
                     $update_question[':subject'] = $question['subject'];
                     $update_question[':answer_list1'] = $question['answer_list1'];
                     $update_question[':answer_list2'] = $question['answer_list2'];
                     $update_question[':answer_list3'] = $question['answer_list3'];
                     $update_question[':answer'] = $question['answer'];
-                    $update_question_sql = "UPDATE question SET subject = :subject, answer_list1 = :answer_list1, answer_list2 = :answer_list2, answer_list3 = :answer_list3, answer = :answer WHERE ticket_key = :ticket_key";
+                    $update_question_sql = "UPDATE question SET subject = :subject, answer_list1 = :answer_list1, answer_list2 = :answer_list2, answer_list3 = :answer_list3, answer = :answer WHERE id = :id";
                     $update_question_stmt = $this->db->prepare($update_question_sql);
                     $update_question_stmt->execute($update_question);
                 }

@@ -56,20 +56,21 @@
                     </div>
 
                     <!-- クイズ作成 -->
-                    <h2>クイズを作成</h2>
+                    <h2>クイズを編集</h2>
+
                     <?php if (isset($this->questions)) : ?>
                         <?php foreach ($this->questions as $i => $question) : ?>
                             <div class="ticketid-form__area ticketid-form__area--question">
-                                <label for="subject">クイズ１</label>
-                                <input type="text" id="subject" name="questions[<?php $this->escape($i); ?>][subject]" class="ticket_id ticket_question_form" placeholder="悠斗の誕生日は？" value="<?php $this->escape($this->questions[$i]['subject']) ?>">
+                                <label for="subject">クイズ<?php $this->escape($i + 1); ?></label>
+                                <input type="text" id="subject" name="questions[<?php $this->escape($i); ?>][subject]" class="ticket_id ticket_question_form" value="<?php $this->escape($question['subject']) ?>">
 
                                 <label for="answer_list1">答え選択肢</label>
-                                <input type="text" name="questions[<?php $this->escape($i); ?>][answer_list1]" class="ticket_id ticket_question_form" placeholder="3月11日" value="<?php $this->escape($this->questions[$i]['answer_list1']) ?>">
-                                <input type="text" name="questions[<?php $this->escape($i); ?>][answer_list2]" class="ticket_id ticket_question_form" placeholder="5月19日" value="<?php $this->escape($this->questions[$i]['answer_list2']) ?>">
-                                <input type="text" name="questions[<?php $this->escape($i); ?>][answer_list3]" class="ticket_id ticket_question_form" placeholder="8月20日" value="<?php $this->escape($this->questions[$i]['answer_list3']) ?>">
+                                <input type="text" name="questions[<?php $this->escape($i); ?>][answer_list1]" class="ticket_id ticket_question_form" value="<?php $this->escape($question['answer_list1']) ?>">
+                                <input type="text" name="questions[<?php $this->escape($i); ?>][answer_list2]" class="ticket_id ticket_question_form" value="<?php $this->escape($question['answer_list2']) ?>">
+                                <input type="text" name="questions[<?php $this->escape($i); ?>][answer_list3]" class="ticket_id ticket_question_form" value="<?php $this->escape($question['answer_list3']) ?>">
 
                                 <label for="answer">答え</label>
-                                <input type="text" id="answer" name="questions[<?php $this->escape($i); ?>][answer]" class="ticket_id ticket_question_form" placeholder="5月19日" value="<?php $this->escape($this->questions[$i]['answer']) ?>">
+                                <input type="text" id="answer" name="questions[<?php $this->escape($i); ?>][answer]" class="ticket_id ticket_question_form" value="<?php $this->escape($question['answer']) ?>">
                             </div>
                         <?php endforeach; ?>
                     <?php endif; ?>
