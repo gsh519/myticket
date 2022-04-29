@@ -25,9 +25,14 @@
                 <h2>チケットをつくろう</h2>
 
                 <!-- 成功メッセージ表示 -->
-                <?php if (!empty($_SESSION['msg'])) : ?>
+                <?php if (isset($_SESSION['msg'])) : ?>
                     <p class="message"><?php $this->escape($_SESSION['msg']); ?></p>
                     <?php unset($_SESSION['msg']); ?>
+                <?php endif; ?>
+
+                <?php if (isset($_SESSION['login_success'])) : ?>
+                    <p class="message"><?php $this->escape($_SESSION['login_success']); ?></p>
+                    <?php unset($_SESSION['login_success']); ?>
                 <?php endif; ?>
 
                 <!-- エラー表示 -->

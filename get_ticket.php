@@ -1,2 +1,4 @@
 <?php
-require('./views/get_ticket.view.php');
+require("./controllers/get-ticket-controller.php");
+$controller = new GetTicketController();
+$controller->main();

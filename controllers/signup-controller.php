@@ -10,7 +10,7 @@ class SignupController extends BaseController
 
             $add_params = [];
             $add_params[':username'] = $user->username;
-            $add_params[':password'] = $user->password;
+            $add_params[':password'] = password_hash($user->password, PASSWORD_DEFAULT);
 
             $this->db->beginTransaction();
 
@@ -21,6 +21,7 @@ class SignupController extends BaseController
                 $this->db->commit();
 
                 $_SESSION['msg'] = '登録しました';
+                $_SESSION['login'] = $user->username;
                 header("Location: ./create.php");
                 exit;
             } catch (Exception $e) {

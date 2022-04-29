@@ -25,6 +25,12 @@
                 <?php unset($_SESSION['msg']); ?>
             <?php endif; ?>
 
+            <?php if (isset($_SESSION['login'])) : ?>
+                <div class="archive-ticket">
+                    <a href="./archive_ticket.php">チケット一覧</a>
+                </div>
+            <?php endif; ?>
+
             <div class="hero__link">
                 <div class="item">
                     <a href="./login.php">
@@ -39,6 +45,12 @@
                     </a>
                 </div>
             </div>
+
+            <?php if (isset($_SESSION['login'])) : ?>
+                <div class="logout">
+                    <a href="./logout.php">ログアウト</a>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 </body>

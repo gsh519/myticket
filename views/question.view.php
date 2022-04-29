@@ -87,7 +87,7 @@
                 <h2><span><?php echo $percent; ?></span></h2>
                 <p class="answer__comm"><?php echo $comment; ?></p>
                 <?php if ($ticket_link) : ?>
-                    <a href="./get_ticket.php" class="ticket-get"><i class="fas fa-gift"></i>チケットをもらう！！</a>
+                    <a href="./get_ticket.php?ticket_key=<?php $this->escape($ticket->ticket_key); ?>" class="ticket-get"><i class="fas fa-gift"></i>チケットをもらう！！</a>
                 <?php endif; ?>
             </div>
         <?php endif; ?>

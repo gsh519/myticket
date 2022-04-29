@@ -6,7 +6,7 @@ class CreateController extends BaseController
 {
     public function main()
     {
-        if (!empty($_POST['create'])) {
+        if (isset($_POST['create'])) {
             $ticket = new Ticket($_POST, $_FILES);
             $questions = new Question($_POST['questions']);
 
@@ -20,6 +20,18 @@ class CreateController extends BaseController
                 // DBに保存
                 $this->db->beginTransaction();
                 try {
+                    // user_ticketテーブルに追加するには
+                    // userのid
+                    // ticketのidが必要
+
+                    // まずはuser情報を取得
+                    $get_user = [];
+                    $get_user['username'] = $_SESSION['login'];
+                    $get_user_sql = "SELECT * FROM user WHERE username = :username";
+                    $get_user_stmt = $this->db->prepare($get_user_sql);
+                    $get_user_stmt->execute($get_user);
+                    $user = $get_user_stmt->fetch(PDO::FETCH_ASSOC);
+
                     // 画像を保存する処理
                     $add_image = [];
                     $add_image[':image_name'] = $ticket->image_name;
@@ -44,6 +56,21 @@ class CreateController extends BaseController
                     $add_sql = "INSERT INTO ticket (ticket_key, ticket_img, ticket_comment) VALUES (:ticket_key, :ticket_img, :ticket_comment)";
                     $add_stmt = $this->db->prepare($add_sql);
                     $add_stmt->execute($add_ticket);
+
+                    // 追加したチケット情報追加
+                    $get_ticket = [];
+                    $get_ticket['ticket_key'] = $ticket->ticket_key;
+                    $get_ticket_sql = "SELECT id FROM ticket WHERE ticket_key = :ticket_key";
+                    $get_ticket_stmt = $this->db->prepare($get_ticket_sql);
+                    $get_ticket_stmt->execute($get_ticket);
+                    $ticket_id = $get_ticket_stmt->fetch(PDO::FETCH_ASSOC);
+
+                    $add_data = [];
+                    $add_data[':user_id'] = $user['id'];
+                    $add_data[':ticket_id'] = $ticket_id['id'];
+                    $add_sql = "INSERT INTO user_ticket (user_id, ticket_id) VALUES (:user_id, :ticket_id)";
+                    $add_stmt = $this->db->prepare($add_sql);
+                    $add_stmt->execute($add_data);
 
                     // クエスチョン情報を追加する処理
                     foreach ($questions->questions as $question) {

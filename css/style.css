@@ -500,3 +500,68 @@ label[for="ticket_img"]:hover {
 .edit-image img {
   max-width: 80%;
 }
+
+.ticket-tab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.ticket-tab li {
+  width: 49%;
+  padding: 16px;
+  background-color: #DDD1C9;
+  border-radius: 15px 15px 0 0;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.ticket-tab li.is-active {
+  background-color: #E1134B;
+}
+
+.ticket-area {
+  display: none;
+}
+
+.ticket-area .ticket-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  row-gap: 24px;
+  margin-bottom: 30px;
+  padding: 30px 15px;
+  background-color: #fff;
+  box-shadow: 0px 3px 2px 2px #ccc;
+}
+
+.ticket-area .ticket-list li {
+  width: calc(100% / 2.1);
+}
+
+.ticket-area .ticket-list li img {
+  width: 100%;
+  height: auto;
+}
+
+.ticket-area.is-show {
+  display: block;
+}
+
+.archive-ticket {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.archive-ticket a {
+  display: inline-block;
+  background-color: #E1134B;
+  padding: 10px 20px;
+  border-radius: 15px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 24px;
+}

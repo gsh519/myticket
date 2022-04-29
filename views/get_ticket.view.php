@@ -17,10 +17,13 @@
         <div class="logo logo--get"><a href="./">myticket</a></div>
         <h1 class="title"><i class="fas fa-gift"></i>ticket for you from yuto</h1>
         <div class="ticket-img fadeIn">
-            <img src="./images/gift_img2.png" alt="チケット画像">
+            <img src="<?php $this->escape($this->ticket['image_path']); ?>" alt="チケット画像">
         </div>
         <p class="info">この画像を保存して<br>当日はこのチケットを見せてね！！</p>
-        <a href="#" class="ticket-link ticket-link--store">画像保存</a>
+        <!-- <a href="../modules/download.php" class="ticket-link ticket-link--store">画像保存</a> -->
+        <form action="" method="post">
+            <button type="submit" name="download" value="download" class="ticket-link ticket-link--store">画像保存</button>
+        </form>
         <a href="/" class="ticket-link">Home</a>
     </div>
 </body>

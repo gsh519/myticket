@@ -10,6 +10,7 @@ class User
             $this->username = $data['username'];
         }
         if (isset($data['password']) && $data['password'] !== '') {
+            // パスワードの条件を決めていないのでパスワードに入力があれば通すようにしている
             $this->password = $data['password'];
         }
     }

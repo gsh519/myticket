@@ -53,6 +53,10 @@
             </form>
         </div>
 
+        <div class="signup-btn">
+            <p>※アカウントをお持ちの方は</p>
+            <a href="./login.php">ログインページ</a>
+        </div>
     </div>
 
     <script src="../js/script.js"></script>

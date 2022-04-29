@@ -482,3 +482,61 @@ label[for="ticket_img"]:hover {
         max-width: 80%;
     }
 }
+
+.ticket-tab {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    li {
+        width: 49%;
+        padding: 16px;
+        background-color: #DDD1C9;
+        border-radius: 15px 15px 0 0;
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+        &.is-active {
+            background-color: $accent-color;
+        }
+    }
+}
+
+.ticket-area {
+    display: none;
+    .ticket-list {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        row-gap: 24px;
+        margin-bottom: 30px;
+        padding: 30px 15px;
+        background-color: #fff;
+        box-shadow: 0px 3px 2px 2px #ccc;
+        li {
+            width: calc(100% / 2.1);
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+    &.is-show {
+        display: block;
+    }
+}
+
+.archive-ticket {
+    text-align: center;
+    margin-bottom: 50px;
+    a {
+        display: inline-block;
+        background-color: $accent-color;
+        padding: 10px 20px;
+        border-radius: 15px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 24px;
+    }
+}
