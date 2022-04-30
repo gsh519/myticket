@@ -565,3 +565,20 @@ label[for="ticket_img"]:hover {
   font-weight: bold;
   font-size: 24px;
 }
+
+.btn-inner {
+  text-align: right;
+  margin-bottom: 30px;
+}
+
+.btn-inner .plus-btn {
+  background-color: #DDD2C9;
+  padding: 12px 24px;
+  border-radius: 15px;
+  font-weight: bold;
+  color: #5E2D01;
+}
+
+.btn-inner .plus-btn i {
+  margin-right: 5px;
+}

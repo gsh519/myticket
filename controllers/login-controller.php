@@ -12,7 +12,7 @@ class LoginController extends BaseController
             exit;
         }
 
-        if (!empty($_POST['add-user'])) {
+        if (isset($_POST['add-user'])) {
             $user = new User($_POST);
 
             $check_params = [];

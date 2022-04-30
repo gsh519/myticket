@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./css/style.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+
+    <script src="../js/script.js" defer></script>
 </head>
 
 <body>
@@ -60,21 +62,27 @@
 
                     <!-- クイズ作成 -->
                     <h2>クイズを作成</h2>
-                    <div class="ticketid-form__area ticketid-form__area--question">
-                        <label for="subject">クイズ１</label>
-                        <input type="text" id="subject" name="questions[0][subject]" class="ticket_id ticket_question_form" placeholder="悠斗の誕生日は？">
+                    <div id="js_ticket-quiz">
+                        <div class="ticketid-form__area ticketid-form__area--question">
+                            <label for="subject">クイズ１</label>
+                            <input type="text" id="subject" name="questions[0][subject]" class="ticket_id ticket_question_form" placeholder="悠斗の誕生日は？">
 
-                        <label for="answer_list1">答え選択肢</label>
-                        <input type="text" name="questions[0][answer_list1]" class="ticket_id ticket_question_form" placeholder="3月11日">
-                        <input type="text" name="questions[0][answer_list2]" class="ticket_id ticket_question_form" placeholder="5月19日">
-                        <input type="text" name="questions[0][answer_list3]" class="ticket_id ticket_question_form" placeholder="8月20日">
+                            <label for="answer_list1">答え選択肢</label>
+                            <input type="text" name="questions[0][answer_list1]" class="ticket_id ticket_question_form" placeholder="3月11日">
+                            <input type="text" name="questions[0][answer_list2]" class="ticket_id ticket_question_form" placeholder="5月19日">
+                            <input type="text" name="questions[0][answer_list3]" class="ticket_id ticket_question_form" placeholder="8月20日">
 
-                        <label for="answer">答え</label>
-                        <input type="text" id="answer" name="questions[0][answer]" class="ticket_id ticket_question_form" placeholder="5月19日">
+                            <label for="answer">答え</label>
+                            <input type="text" id="answer" name="questions[0][answer]" class="ticket_id ticket_question_form" placeholder="5月19日">
+                        </div>
+                    </div>
+
+                    <div class="btn-inner">
+                        <button class="plus-btn" id="js_plus"><i class="fas fa-plus"></i>クイズを追加</button>
                     </div>
 
 
-                    <div class="ticketid-form__area ticketid-form__area--question">
+                    <!-- <div class="ticketid-form__area ticketid-form__area--question">
                         <label for="subject">クイズ2</label>
                         <input type="text" id="subject" name="questions[1][subject]" class="ticket_id ticket_question_form" placeholder="芽衣の誕生日は？">
 
@@ -98,7 +106,7 @@
 
                         <label for="answer">答え</label>
                         <input type="text" id="answer" name="questions[2][answer]" class="ticket_id ticket_question_form" placeholder="ラーメン">
-                    </div>
+                    </div> -->
 
                     <!-- 作成ボタン -->
                     <div class="ticketid-form__area ticketid-form__area--right">

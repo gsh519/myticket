@@ -46,11 +46,22 @@
                 </div>
             </div>
 
+            <!-- ログインボタンorログアウトボタン -->
             <?php if (isset($_SESSION['login'])) : ?>
-                <div class="logout">
+                <div class="logout signup-btn">
                     <a href="./logout.php">ログアウト</a>
                 </div>
+            <?php else : ?>
+                <div class="signup-btn">
+                    <a href="./login.php">ログイン</a>
+                </div>
             <?php endif; ?>
+        </div>
+    </div>
+
+    <div class="about">
+        <div class="wrapper">
+            <h1>自分チケットについて</h1>
         </div>
     </div>
 </body>

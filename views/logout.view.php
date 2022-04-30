@@ -19,7 +19,7 @@
             <h1>ログアウトしました</h1>
         </div>
 
-
+        <a href="/" class="ticket-link">Home</a>
     </div>
 </body>
 
