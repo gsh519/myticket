@@ -59,6 +59,7 @@
                             <input type="hidden" name="MAX_FILE_SIZE" value="1048576">
                             <input accept="image/*" type="file" id="ticket_img" name="ticket_img">チケット画像を選択
                         </label>
+                        <img src="" id="preview_img" alt="プレビュー画像">
                     </div>
 
                     <!-- コメント -->

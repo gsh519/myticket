@@ -22,6 +22,7 @@ function tabSwitch() {
 const plusBtn = document.getElementById('js_plus');
 const ticket_quiz = document.getElementById('js_ticket-quiz');
 plusBtn.addEventListener('click', function (e) {
+    // フォームのデフォルト機能削除
     e.preventDefault();
 
     let quiz_forms = document.getElementsByClassName('ticketid-form__area--question');
@@ -40,3 +41,14 @@ plusBtn.addEventListener('click', function (e) {
                             <input type="text" id="answer" name="questions[${index}][answer]" class="ticket_id ticket_question_form" placeholder="5月19日">
                         </div>`;
 })
+
+// プレビュー画像を表示
+const preview_img = document.getElementById('preview_img');
+const ticket_img = document.getElementById('ticket_img');
+ticket_img.addEventListener('change', function (e) {
+    let reader = new FileReader();
+    reader.onload = function (e) {
+        preview_img.setAttribute('src', e.target.result);
+    }
+    reader.readAsDataURL(e.target.files[0]);
+});
