@@ -20,10 +20,6 @@ class CreateController extends BaseController
                 // DBに保存
                 $this->db->beginTransaction();
                 try {
-                    // user_ticketテーブルに追加するには
-                    // userのid
-                    // ticketのidが必要
-
                     // まずはuser情報を取得
                     $get_user = [];
                     $get_user['username'] = $_SESSION['login'];
@@ -99,6 +95,9 @@ class CreateController extends BaseController
                     echo 'チケットが作成できませんでした:' . $e;
                 }
             }
+        } else {
+            $ticket = new Ticket();
+            $questions = new Question();
         }
         require("./views/create.view.php");
     }

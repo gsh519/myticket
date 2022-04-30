@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.min.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"> -->
 
     <script src="../js/script.js" defer></script>
 </head>
@@ -39,6 +39,13 @@
 
                 <!-- エラー表示 -->
                 <ul>
+                    <?php if (!empty($ticket->errors)) : ?>
+                        <?php foreach ($ticket->errors as $error) : ?>
+                            <li><?php $this->escape($error); ?></li>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </ul>
+                <ul>
                     <?php foreach ($this->errors as $error) : ?>
                         <li><?php $this->escape($error); ?></li>
                     <?php endforeach; ?>
@@ -57,56 +64,52 @@
                     <!-- コメント -->
                     <div class="ticketid-form__area">
                         <label for="ticket_comment">チケットにつけるコメント</label>
-                        <input type="text" id="ticket_comment" name="ticket_comment" class="ticket_id" placeholder="fanrgargjaf">
+                        <input value="<?php $this->escape($ticket->ticket_comment); ?>" type="text" id="ticket_comment" name="ticket_comment" class="ticket_id" placeholder="fanrgargjaf">
                     </div>
 
                     <!-- クイズ作成 -->
                     <h2>クイズを作成</h2>
                     <div id="js_ticket-quiz">
-                        <div class="ticketid-form__area ticketid-form__area--question">
-                            <label for="subject">クイズ１</label>
-                            <input type="text" id="subject" name="questions[0][subject]" class="ticket_id ticket_question_form" placeholder="悠斗の誕生日は？">
+                        <!-- ここから -->
+                        <?php
+                        if (!empty($questions->questions)) :
+                            foreach ($questions->questions as $index => $question) :
+                        ?>
+                                <div class="ticketid-form__area ticketid-form__area--question">
+                                    <label for="subject">クイズ<?php $this->escape($index + 1); ?></label>
+                                    <input value="<?php $this->escape($question['subject']); ?>" required type="text" id="subject" name="questions[<?php $this->escape($index); ?>][subject]" class="ticket_id ticket_question_form" placeholder="悠斗の誕生日は？">
 
-                            <label for="answer_list1">答え選択肢</label>
-                            <input type="text" name="questions[0][answer_list1]" class="ticket_id ticket_question_form" placeholder="3月11日">
-                            <input type="text" name="questions[0][answer_list2]" class="ticket_id ticket_question_form" placeholder="5月19日">
-                            <input type="text" name="questions[0][answer_list3]" class="ticket_id ticket_question_form" placeholder="8月20日">
+                                    <label for="answer_list1">答え選択肢</label>
+                                    <input value="<?php $this->escape($question['answer_list1']); ?>" required type="text" name="questions[<?php $this->escape($index); ?>][answer_list1]" class="ticket_id ticket_question_form" placeholder="3月11日">
+                                    <input value="<?php $this->escape($question['answer_list2']); ?>" required type="text" name="questions[<?php $this->escape($index); ?>][answer_list2]" class="ticket_id ticket_question_form" placeholder="5月19日">
+                                    <input value="<?php $this->escape($question['answer_list3']); ?>" required type="text" name="questions[<?php $this->escape($index); ?>][answer_list3]" class="ticket_id ticket_question_form" placeholder="8月20日">
 
-                            <label for="answer">答え</label>
-                            <input type="text" id="answer" name="questions[0][answer]" class="ticket_id ticket_question_form" placeholder="5月19日">
-                        </div>
+                                    <label for="answer">答え</label>
+                                    <input value="<?php $this->escape($question['answer']); ?>" required type="text" id="answer" name="questions[<?php $this->escape($index); ?>][answer]" class="ticket_id ticket_question_form" placeholder="5月19日">
+                                </div>
+                            <?php
+                            endforeach;
+                        else :
+                            ?>
+                            <div class="ticketid-form__area ticketid-form__area--question">
+                                <label for="subject">クイズ１</label>
+                                <input required type="text" id="subject" name="questions[0][subject]" class="ticket_id ticket_question_form" placeholder="悠斗の誕生日は？">
+
+                                <label for="answer_list1">答え選択肢</label>
+                                <input required type="text" name="questions[0][answer_list1]" class="ticket_id ticket_question_form" placeholder="3月11日">
+                                <input required type="text" name="questions[0][answer_list2]" class="ticket_id ticket_question_form" placeholder="5月19日">
+                                <input required type="text" name="questions[0][answer_list3]" class="ticket_id ticket_question_form" placeholder="8月20日">
+
+                                <label for="answer">答え</label>
+                                <input required type="text" id="answer" name="questions[0][answer]" class="ticket_id ticket_question_form" placeholder="5月19日">
+                            </div>
+                        <?php endif; ?>
+                        <!-- ここまで -->
                     </div>
 
                     <div class="btn-inner">
                         <button class="plus-btn" id="js_plus"><i class="fas fa-plus"></i>クイズを追加</button>
                     </div>
-
-
-                    <!-- <div class="ticketid-form__area ticketid-form__area--question">
-                        <label for="subject">クイズ2</label>
-                        <input type="text" id="subject" name="questions[1][subject]" class="ticket_id ticket_question_form" placeholder="芽衣の誕生日は？">
-
-                        <label for="answer_list2">答え選択肢</label>
-                        <input type="text" name="questions[1][answer_list1]" class="ticket_id ticket_question_form" placeholder="2月13日">
-                        <input type="text" name="questions[1][answer_list2]" class="ticket_id ticket_question_form" placeholder="5月19日">
-                        <input type="text" name="questions[1][answer_list3]" class="ticket_id ticket_question_form" placeholder="8月20日">
-
-                        <label for="answer">答え</label>
-                        <input type="text" id="answer" name="questions[1][answer]" class="ticket_id ticket_question_form" placeholder="2月13日">
-                    </div>
-
-                    <div class="ticketid-form__area ticketid-form__area--question">
-                        <label for="subject">クイズ3</label>
-                        <input type="text" id="subject" name="questions[2][subject]" class="ticket_id ticket_question_form" placeholder="好きな食べ物は？">
-
-                        <label for="answer_list2">答え選択肢</label>
-                        <input type="text" name="questions[2][answer_list1]" class="ticket_id ticket_question_form" placeholder="ラーメン">
-                        <input type="text" name="questions[2][answer_list2]" class="ticket_id ticket_question_form" placeholder="そば">
-                        <input type="text" name="questions[2][answer_list3]" class="ticket_id ticket_question_form" placeholder="うどん">
-
-                        <label for="answer">答え</label>
-                        <input type="text" id="answer" name="questions[2][answer]" class="ticket_id ticket_question_form" placeholder="ラーメン">
-                    </div> -->
 
                     <!-- 作成ボタン -->
                     <div class="ticketid-form__area ticketid-form__area--right">
