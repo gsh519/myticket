@@ -582,3 +582,17 @@ label[for="ticket_img"]:hover {
 .btn-inner .plus-btn i {
   margin-right: 5px;
 }
+
+.img-form {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.preview {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.preview img {
+  width: 100%;
+}

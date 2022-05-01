@@ -17,12 +17,8 @@ class ArchiveTicketController extends BaseController
             $get_user_stmt = $this->db->prepare($get_user_sql);
             $get_user_stmt->execute($get_user);
             $tickets = $get_user_stmt->fetchAll(PDO::FETCH_ASSOC);
-            // var_dump($tickets);
-            // die;
 
             foreach ($tickets as $ticket) {
-                // var_dump($ticket);
-                // die;
                 $get_ticket = [];
                 $get_ticket[':id'] = $ticket['ticket_id'];
                 $get_ticket_sql = "SELECT * FROM ticket as t LEFT JOIN image ON image.id = t.ticket_img WHERE t.id = :id";
@@ -30,11 +26,8 @@ class ArchiveTicketController extends BaseController
                 $get_ticket_stmt->execute($get_ticket);
                 $this->tickets[] = $get_ticket_stmt->fetch(PDO::FETCH_ASSOC);
             }
-
-            // var_dump($this->tickets);
-            // die;
         }
-        // var_dump($_SESSION);
+
         require("./views/archive_ticket.view.php");
     }
 }

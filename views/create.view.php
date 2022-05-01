@@ -54,12 +54,14 @@
                 <form action="" method="post" enctype="multipart/form-data">
 
                     <!-- 画像 -->
-                    <div class="ticketid-form__area">
+                    <div class="ticketid-form__area img-form">
                         <label for="ticket_img">
                             <input type="hidden" name="MAX_FILE_SIZE" value="1048576">
                             <input accept="image/*" type="file" id="ticket_img" name="ticket_img">チケット画像を選択
                         </label>
-                        <img src="" id="preview_img" alt="プレビュー画像">
+                        <div class="preview">
+                            <img src="" id="preview_img">
+                        </div>
                     </div>
 
                     <!-- コメント -->

@@ -555,3 +555,16 @@ label[for="ticket_img"]:hover {
         }
     }
 }
+
+.img-form {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.preview {
+    max-width: 400px;
+    margin: 0 auto;
+    img {
+        width: 100%;
+    }
+}

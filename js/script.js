@@ -28,7 +28,7 @@ plusBtn.addEventListener('click', function (e) {
     let quiz_forms = document.getElementsByClassName('ticketid-form__area--question');
     let index = quiz_forms.length;
 
-    ticket_quiz.innerHTML += `<div class="ticketid-form__area ticketid-form__area--question">
+    let content = `<div class="ticketid-form__area ticketid-form__area--question">
                             <label for="subject">クイズ${index + 1}</label>
                             <input type="text" id="subject" name="questions[${index}][subject]" class="ticket_id ticket_question_form" placeholder="悠斗の誕生日は？">
 
@@ -40,7 +40,44 @@ plusBtn.addEventListener('click', function (e) {
                             <label for="answer">答え</label>
                             <input type="text" id="answer" name="questions[${index}][answer]" class="ticket_id ticket_question_form" placeholder="5月19日">
                         </div>`;
+
+    ticket_quiz.insertAdjacentHTML('beforeend', content);
+
+    // クイズの入力フォームが2つ以上あったら
+    // 一番最後の入力フォームの後に要素削除ボタンを設置
+    if (quiz_forms.length > 1 && 3 > quiz_forms.length) {
+        console.log(quiz_forms.length);
+        console.log(quiz_forms[index]);
+        let last_quiz_forms = quiz_forms[index];
+        const minus_btn = `<div class="btn-inner">
+                            <button class="plus-btn" id="js_minus"><i class="fas fa-plus"></i>クイズを削除</button>
+                            </div>`
+        last_quiz_forms.insertAdjacentHTML('beforeend', minus_btn);
+    } else if (quiz_forms.length > 2) {
+        let current_minus_btn = document.getElementById('js_minus');
+        console.log(current_minus_btn);
+        current_minus_btn.remove();
+
+        let last_quiz_forms = quiz_forms[index];
+        const new_minus_btn = `<div class="btn-inner">
+                            <button class="plus-btn" id="js_minus"><i class="fas fa-plus"></i>クイズを削除</button>
+                            </div>`
+        last_quiz_forms.insertAdjacentHTML('beforeend', new_minus_btn);
+    }
 })
+
+// クイズ削除ボタンを押したとき
+// let quiz_forms = document.getElementsByClassName('ticketid-form__area--question');
+// console.log(quiz_forms);
+// if (quiz_forms.length > 2) {
+//     const minus_btn = document.getElementById('js_minus');
+//     console.log(minus_btn);
+// }
+
+// minusBtn.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     last_quiz_forms.remove();
+// })
 
 // プレビュー画像を表示
 const preview_img = document.getElementById('preview_img');
