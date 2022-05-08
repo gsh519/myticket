@@ -19,14 +19,14 @@
             <!-- <h1>ゆうとがあなたに向けて<br>作ったクイズです!</h1> -->
         </div>
 
-        <p class="question-ttl">クイズを解いてチケットをもらおう!</p>
+        <p class="question-ttl">クイズを解いて<br>チケットをもらおう!</p>
         <!-- エラー文表示 -->
         <ul class="ticketid-form__area">
             <?php foreach ($this->errors as $error) : ?>
                 <li class="error"><?php $this->escape($error); ?></li>
             <?php endforeach ?>
         </ul>
-        <form action="" method="POST">
+        <form class="form" action="" method="POST">
             <div class="questions">
 
                 <?php if (isset($question->questions)) : ?>

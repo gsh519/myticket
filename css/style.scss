@@ -23,7 +23,7 @@ color: rgb(156, 156, 156);
 .wrapper {
 max-width: 900px;
 margin: 0 auto;
-padding: 16px 16px 56px 16px;
+padding: 16px;
 }
 
 .message {
@@ -596,4 +596,8 @@ label[for="ticket_img"]:hover {
     color: $accent-color;
     font-size: 30px;
     font-weight: bold;
+}
+
+.form {
+    margin-bottom: 40px;
 }

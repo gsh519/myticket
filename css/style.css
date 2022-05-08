@@ -11,7 +11,7 @@ body {
 .wrapper {
   max-width: 900px;
   margin: 0 auto;
-  padding: 16px 16px 56px 16px;
+  padding: 16px;
 }
 
 .message {
@@ -620,4 +620,8 @@ label[for="ticket_img"]:hover {
   color: #E1134B;
   font-size: 30px;
   font-weight: bold;
+}
+
+.form {
+  margin-bottom: 40px;
 }
