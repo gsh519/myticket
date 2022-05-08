@@ -59,11 +59,11 @@
         </div>
     </div>
 
-    <div class="about">
+    <!-- <div class="about">
         <div class="wrapper">
             <h1>自分チケットについて</h1>
         </div>
-    </div>
+    </div> -->
 </body>
 
 </html>

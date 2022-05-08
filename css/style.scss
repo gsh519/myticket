@@ -8,6 +8,12 @@ $accent-color: #E1134B;
 
 body {
 background-color: $sub-color;
+font-family: 'ヒラギノ角ゴシック',
+'Hiragino Sans',
+'Yu Gothic UI',
+'Hiragino Kaku Gothic ProN',
+'ヒラギノ角ゴ ProN W3',
+sans-serif;
 }
 
 ::placeholder {
@@ -17,7 +23,7 @@ color: rgb(156, 156, 156);
 .wrapper {
 max-width: 900px;
 margin: 0 auto;
-padding: 16px;
+padding: 16px 16px 56px 16px;
 }
 
 .message {
@@ -153,7 +159,7 @@ h2 {
 
 .question-ttl {
 text-align: center;
-font-size: 18px;
+font-size: 24px;
 color: $accent-color;
 font-weight: bold;
 margin-bottom: 10px;
@@ -582,4 +588,12 @@ label[for="ticket_img"]:hover {
     img {
         width: 100%;
     }
+}
+
+.ticket-comment {
+    margin-bottom: 20px;
+    text-align: center;
+    color: $accent-color;
+    font-size: 30px;
+    font-weight: bold;
 }
