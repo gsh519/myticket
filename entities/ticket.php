@@ -18,7 +18,7 @@ class Ticket
             $this->image_size = $file['ticket_img']['size'];
 
             // ファイルサイズ
-            if ($this->image_size > 1048576 || $this->image_error == 2) {
+            if ($this->image_size > 10485760 || $this->image_error == 2) {
                 $errors[] = 'ファイルサイズは1MB未満にしてください';
             }
 

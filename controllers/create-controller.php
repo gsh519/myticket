@@ -12,7 +12,7 @@ class CreateController extends BaseController
 
             if (empty($ticket->errors)) {
                 // ファイルに画像を保存
-                $upload_dir = 'upload_images/';
+                $upload_dir = './upload_images/';
                 $save_image_name = date('YmdHis') . $ticket->image_name;
                 $save_path = $upload_dir . $save_image_name;
                 move_uploaded_file($ticket->image_tmp_name, $save_path);
