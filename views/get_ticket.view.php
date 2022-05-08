@@ -17,7 +17,7 @@
         <div class="logo logo--get"><a href="./">myticket</a></div>
         <h1 class="title"><i class="fas fa-gift"></i>ticket for you</h1>
         <div class="ticket-img fadeIn">
-            <?php if ($_GET['ticket_key'] === 'EX20JMc7') : ?>
+            <?php if ($_GET['ticket_key'] === 'YbehzHhf') : ?>
                 <img src="../images/hahanohi_yuto.png">
             <?php elseif ($_GET['ticket_key'] === 'xxx') : ?>
                 <img src="../images/hahanohi_mei.png">
