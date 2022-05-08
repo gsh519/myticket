@@ -19,7 +19,7 @@
         <div class="ticket-img fadeIn">
             <?php if ($_GET['ticket_key'] === 'YbehzHhf') : ?>
                 <img src="../images/hahanohi_yuto.png">
-            <?php elseif ($_GET['ticket_key'] === 'xxx') : ?>
+            <?php elseif ($_GET['ticket_key'] === 'O8IyPbw6') : ?>
                 <img src="../images/hahanohi_mei.png">
             <?php else : ?>
                 <img src="<?php $this->escape($this->ticket['image_path']); ?>" alt="チケット画像">
