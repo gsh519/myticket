@@ -19,6 +19,22 @@ body {
   color: #E1134B;
 }
 
+.btn-wrapper {
+  text-align: center;
+}
+
+.btn-wrapper .btn {
+  display: inline-block;
+  margin: 20px auto;
+  padding: 16px;
+  background-color: #E1134B;
+  border-radius: 15px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  color: #fff;
+}
+
 .logo a {
   font-size: 20px;
   color: #E1134B;

@@ -19,6 +19,17 @@
         <div class="logo logo--get"><a href="./">myticket</a></div>
         <h1 class="title"><i class="fas fa-gift"></i>チケット一覧</h1>
         <div>
+            <!-- 成功メッセージ表示 -->
+            <?php if (isset($_SESSION['msg'])) : ?>
+                <p class="message"><?php $this->escape($_SESSION['msg']); ?></p>
+                <?php unset($_SESSION['msg']); ?>
+            <?php endif; ?>
+
+            <?php if (isset($_SESSION['login_success'])) : ?>
+                <p class="message"><?php $this->escape($_SESSION['login_success']); ?></p>
+                <?php unset($_SESSION['login_success']); ?>
+            <?php endif; ?>
+
             <ul class="ticket-tab">
                 <li class="tab is-active">あげたチケット</li>
                 <li class="tab">もらったチケット</li>
@@ -66,7 +77,10 @@
             </div>
         </div>
 
-        <a href="/" class="ticket-link">Home</a>
+        <div class="btn-wrapper">
+            <a href="../create.php" class="btn">チケットを作成</a>
+            <a href="/" class="ticket-link">Home</a>
+        </div>
     </div>
 </body>
 

@@ -30,7 +30,7 @@ class LoginController extends BaseController
                     session_regenerate_id(true);
                     $_SESSION['login'] = $user->username;
                     $_SESSION['login_success'] = 'ログインしました';
-                    header("Location: ./create.php");
+                    header("Location: ./archive_ticket.php");
                     exit;
                 }
             } else {
