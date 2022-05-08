@@ -26,6 +26,19 @@
                 <li class="error"><?php $this->escape($error); ?></li>
             <?php endforeach ?>
         </ul>
+        <div>
+            <!-- 正解数によって表示内容を変える -->
+            <?php if ($_POST) : ?>
+
+                <div class="answer" id="answer-area">
+                    <h2><span><?php echo $percent; ?></span></h2>
+                    <p class="answer__comm"><?php echo $comment; ?></p>
+                    <?php if ($ticket_link) : ?>
+                        <a href="./get_ticket.php?ticket_key=<?php $this->escape($ticket->ticket_key); ?>" class="ticket-get"><i class="fas fa-gift"></i>チケットをもらう！！</a>
+                    <?php endif; ?>
+                </div>
+            <?php endif; ?>
+        </div>
         <form class="form" action="" method="POST">
             <div class="questions">
 
@@ -79,18 +92,6 @@
 
             <button class="check" type="submit" id="check-btn">採点する</button>
         </form>
-
-        <!-- 正解数によって表示内容を変える -->
-        <?php if ($_POST) : ?>
-
-            <div class="answer" id="answer-area">
-                <h2><span><?php echo $percent; ?></span></h2>
-                <p class="answer__comm"><?php echo $comment; ?></p>
-                <?php if ($ticket_link) : ?>
-                    <a href="./get_ticket.php?ticket_key=<?php $this->escape($ticket->ticket_key); ?>" class="ticket-get"><i class="fas fa-gift"></i>チケットをもらう！！</a>
-                <?php endif; ?>
-            </div>
-        <?php endif; ?>
     </div>
 
     <script src="../js/script.js"></script>
