@@ -17,7 +17,13 @@
         <div class="logo logo--get"><a href="./">myticket</a></div>
         <h1 class="title"><i class="fas fa-gift"></i>ticket for you</h1>
         <div class="ticket-img fadeIn">
-            <img src="<?php $this->escape($this->ticket['image_path']); ?>" alt="チケット画像">
+            <?php if ($_GET['ticket_key'] === 'EX20JMc7') : ?>
+                <img src="../images/hahanohi_yuto.png">
+            <?php elseif ($_GET['ticket_key'] === 'xxx') : ?>
+                <img src="../images/hahanohi_mei.png">
+            <?php else : ?>
+                <img src="<?php $this->escape($this->ticket['image_path']); ?>" alt="チケット画像">
+            <?php endif; ?>
         </div>
         <p class="ticket-comment"><?php $this->escape($this->ticket['ticket_comment']); ?></p>
         <p class="info">画像を長押しして保存できるよ！</p>
