@@ -26,6 +26,10 @@ class ArchiveTicketController extends BaseController
                 $get_ticket_stmt->execute($get_ticket);
                 $this->tickets[] = $get_ticket_stmt->fetch(PDO::FETCH_ASSOC);
             }
+        } else {
+            $_SESSION['msg'] = 'ログインしてね！';
+            header("Location: ./login.php");
+            exit;
         }
 
         require("./views/archive_ticket.view.php");

@@ -6,6 +6,13 @@ class CreateController extends BaseController
 {
     public function main()
     {
+        // ログインしているかチェック
+        if (!isset($_SESSION['login'])) {
+            $_SESSION['msg'] = 'ログインしてね！';
+            header("Location: ./login.php");
+            exit;
+        }
+
         if (isset($_POST['create'])) {
             $ticket = new Ticket($_POST, $_FILES);
             $questions = new Question($_POST['questions']);

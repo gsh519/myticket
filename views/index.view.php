@@ -20,7 +20,7 @@
             <h1 class="hero__ttl"></h1>
 
             <!-- 成功メッセージ表示 -->
-            <?php if (!empty($_SESSION['msg'])) : ?>
+            <?php if (isset($_SESSION['msg'])) : ?>
                 <p class="message"><?php $this->escape($_SESSION['msg']); ?></p>
                 <?php unset($_SESSION['msg']); ?>
             <?php endif; ?>

@@ -26,7 +26,7 @@ class SignupController extends BaseController
 
                     $_SESSION['msg'] = '登録しました';
                     $_SESSION['login'] = $user->username;
-                    header("Location: ./create.php");
+                    header("Location: ./archive_ticket.php");
                     exit;
                 } catch (Exception $e) {
                     $this->db->rollBack();

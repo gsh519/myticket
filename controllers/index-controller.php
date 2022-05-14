@@ -1,9 +1,10 @@
 <?php
-class IndexController
+require("./controllers/base-controller.php");
+
+class IndexController extends BaseController
 {
     public function main()
     {
-        session_start();
         require('./views/index.view.php');
     }
 }

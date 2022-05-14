@@ -21,6 +21,10 @@
 
         <div class="login-form">
             <h1>ログイン</h1>
+            <?php if (isset($_SESSION['msg'])) : ?>
+                <p class="error"><?php $this->escape($_SESSION['msg']); ?></p>
+                <?php unset($_SESSION['msg']); ?>
+            <?php endif; ?>
             <!-- エラー表示 -->
             <?php if ($this->errors) : ?>
                 <ul>
